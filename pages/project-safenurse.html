@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SafeNurse &#x2014; Project Detail</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="../project-detail.css" />
+</head>
+<body>
+  <canvas id="particleCanvas"></canvas>
+
+  <nav class="detail-nav">
+    <a href="../index.html#projects" class="back-link">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+      <span data-i18n="detail.back">Back to Projects</span>
+    </a>
+    <span class="detail-nav-title">SafeNurse</span>
+    <button class="lang-toggle" id="langToggle" aria-label="Toggle language">EN</button>
+  </nav>
+
+  <!-- Project Info -->
+  <section class="detail-hero">
+    <div class="detail-content">
+      <h1>SafeNurse &#x1F3E5;</h1>
+      <p class="detail-description" data-i18n-html="sn.desc">Sistem pelaporan insiden keselamatan pasien berbasis web untuk rumah sakit. Perawat melaporkan insiden melalui asisten chatbot AI, dan laporan diproses secara otomatis dengan validasi, scoring, serta notifikasi ke pihak terkait.</p>
+      <div class="detail-tech-row">
+        <span class="tech-front">Next.js</span><span class="tech-front">React</span><span class="tech-front">TypeScript</span><span class="tech-front">Tailwind CSS</span>
+        <span class="tech-back">Express.js</span><span class="tech-db">Supabase</span><span class="tech-ai">OpenRouter AI/LLM</span><span class="tech-other">Nodemailer</span><span class="tech-other">Vercel</span>
+      </div>
+      <div class="detail-links">
+        <a href="https://safenurse-testing-mar.vercel.app/" target="_blank" data-i18n="btn.demo">Live Demo</a>
+        <a href="https://github.com/AmmarTyoPasaribu/SafeNurseTestingMar" target="_blank" data-i18n="btn.source">Source Code</a>
+      </div>
+      <div class="detail-divider"></div>
+    </div>
+  </section>
+
+  <section class="detail-section">
+    <div class="detail-content">
+      <h2><span data-i18n-html="detail.features">&#x2728; <span>Features</span></span></h2>
+      <div class="features-grid">
+        <div class="feature-item"><span class="feature-icon">&#x2726;</span><div data-i18n-html="sn.f1"><strong>Chat Assistant AI</strong> &#x2014; Pelaporan insiden melalui chatbot interaktif dengan AI yang membimbing pengisian data</div></div>
+        <div class="feature-item"><span class="feature-icon">&#x2726;</span><div data-i18n-html="sn.f2"><strong>Voice Input</strong> &#x2014; Input suara menggunakan Web Speech API langsung dari browser</div></div>
+        <div class="feature-item"><span class="feature-icon">&#x2726;</span><div data-i18n-html="sn.f3"><strong>Auto Kategorisasi</strong> &#x2014; Data laporan dikategorikan otomatis oleh LLM (KTD, KPC, KNC, KTC, Sentinel)</div></div>
+        <div class="feature-item"><span class="feature-icon">&#x2726;</span><div data-i18n-html="sn.f4"><strong>Multi-Role Dashboard</strong> &#x2014; Dashboard berbeda untuk Perawat, Kepala Ruangan, Chief Nursing, dan Super Admin</div></div>
+        <div class="feature-item"><span class="feature-icon">&#x2726;</span><div data-i18n-html="sn.f5"><strong>Notifikasi &amp; Email</strong> &#x2014; Notifikasi real-time dan email otomatis untuk setiap perubahan status</div></div>
+        <div class="feature-item"><span class="feature-icon">&#x2726;</span><div data-i18n-html="sn.f6"><strong>Scoring &amp; Grading</strong> &#x2014; Penilaian risiko insiden berdasarkan dampak dan probabilitas</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="detail-section">
+    <div class="detail-content">
+      <h2><span data-i18n-html="detail.tech">&#x1F6E0; <span>Tech Stack</span></span></h2>
+      <table class="tech-table">
+        <tr><td>Frontend</td><td>Next.js, React, TypeScript, Tailwind CSS</td></tr>
+        <tr><td>Backend</td><td>Node.js, Express.js</td></tr>
+        <tr><td>Database</td><td>Supabase (PostgreSQL)</td></tr>
+        <tr><td>AI/LLM</td><td>OpenRouter (multi-model fallback)</td></tr>
+        <tr><td>Email</td><td>Nodemailer (Gmail SMTP)</td></tr>
+        <tr><td>Hosting</td><td>Vercel</td></tr>
+      </table>
+    </div>
+  </section>
+
+  <section class="detail-gallery-hero">
+    <div class="gallery-hero-inner">
+      <h2><span data-i18n-html="detail.screenshots">&#x1F4F8; <span>Screenshots</span></span></h2>
+      <div class="gallery-grid-hero">
+        <div class="gallery-item-hero" onclick="openLightbox(this)"><img src="../assets/screenshots/safenurse/main.png" alt="SafeNurse &#x2014; Main" /></div>
+        <div class="gallery-item-hero" onclick="openLightbox(this)"><img src="../assets/screenshots/safenurse/ss1.png" alt="Screenshot 1" /></div>
+        <div class="gallery-item-hero" onclick="openLightbox(this)"><img src="../assets/screenshots/safenurse/ss2.png" alt="Screenshot 2" /></div>
+        <div class="gallery-item-hero" onclick="openLightbox(this)"><img src="../assets/screenshots/safenurse/ss3.png" alt="Screenshot 3" /></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+    <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+    <img id="lightboxImg" src="" alt="Full screenshot" />
+  </div>
+  <footer class="detail-footer"><p data-i18n="footer.copy">&copy; 2026 Ammar Tyo Pasaribu</p></footer>
+  <script src="../script.js"></script>
+  <script src="../i18n.js"></script>
+  <script>
+    function openLightbox(el){document.getElementById('lightboxImg').src=el.querySelector('img').src;document.getElementById('lightbox').classList.add('active');}
+    function closeLightbox(){document.getElementById('lightbox').classList.remove('active');}
+    document.addEventListener('keydown',e=>{if(e.key==='Escape')closeLightbox();});
+  </script>
+</body>
+</html>

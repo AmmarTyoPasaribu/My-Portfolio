@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MaR Interview &#x2014; Project Detail</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../style.css" /><link rel="stylesheet" href="../project-detail.css" />
+</head>
+<body>
+  <canvas id="particleCanvas"></canvas>
+  <nav class="detail-nav"><a href="../index.html#projects" class="back-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg data-i18n="detail.back">Back to Projects</a><span class="detail-nav-title">MaR Interview</span>  <button class="lang-toggle" id="langToggle" aria-label="Toggle language">EN</button>
+  </nav>
+
+<section class="detail-hero"><div class="detail-content">
+    <h1>MaR Interview &#x1F4CB;</h1>
+    <p class="detail-description" data-i18n-html="iv.desc">Aplikasi penilaian interview kandidat berbasis web. Membuat template pertanyaan, scoring secara real-time untuk setiap kandidat, dan leaderboard ranking otomatis untuk perbandingan hasil.</p>
+    <div class="detail-tech-row">
+      <span class="tech-front">HTML</span><span class="tech-front">JavaScript</span><span class="tech-front">Tailwind CSS</span><span class="tech-back">Node.js</span><span class="tech-db">Supabase</span><span class="tech-other">Vercel</span>
+    </div>
+    <div class="detail-links">
+      <a href="https://mar-interview.vercel.app/" target="_blank" data-i18n="btn.demo">Live Demo</a>
+      <a href="https://github.com/AmmarTyoPasaribu/MaR-Interview" target="_blank" data-i18n="btn.source">Source Code</a>
+    </div>
+    <div class="detail-divider"></div>
+  </div></section>
+
+  <section class="detail-section"><div class="detail-content">
+    <h2><span data-i18n-html="detail.features">&#x2728; <span>Features</span></span></h2>
+    <div class="features-grid">
+      <div class="feature-item"><span class="feature-icon">&#x2726;</span><div data-i18n-html="iv.f1"><strong>Template Creation</strong> &#x2014; Buat template pertanyaan interview yang bisa dipakai ulang</div></div>
+      <div class="feature-item"><span class="feature-icon">&#x2726;</span><div data-i18n-html="iv.f2"><strong>Real-time Scoring</strong> &#x2014; Penilaian langsung saat interview berlangsung</div></div>
+      <div class="feature-item"><span class="feature-icon">&#x2726;</span><div data-i18n-html="iv.f3"><strong>Leaderboard</strong> &#x2014; Ranking otomatis berdasarkan skor total kandidat</div></div>
+      <div class="feature-item"><span class="feature-icon">&#x2726;</span><div data-i18n-html="iv.f4"><strong>Detail Breakdown</strong> &#x2014; Lihat detail skor per kategori untuk setiap kandidat</div></div>
+      <div class="feature-item"><span class="feature-icon">&#x2726;</span><div data-i18n-html="iv.f5"><strong>Multi-Template</strong> &#x2014; Mendukung berbagai template untuk posisi berbeda</div></div>
+      <div class="feature-item"><span class="feature-icon">&#x2726;</span><div data-i18n-html="iv.f6"><strong>Responsive</strong> &#x2014; Bisa digunakan di perangkat mobile dan desktop</div></div>
+    </div>
+  </div></section>
+
+  <section class="detail-section"><div class="detail-content">
+    <h2><span data-i18n-html="detail.tech">&#x1F6E0; <span>Tech Stack</span></span></h2>
+    <table class="tech-table">
+      <tr><td>Frontend</td><td>HTML, JavaScript, Tailwind CSS (CDN)</td></tr>
+      <tr><td>Backend</td><td>Node.js Serverless Functions</td></tr>
+      <tr><td>Database</td><td>Supabase (PostgreSQL)</td></tr>
+      <tr><td>Hosting</td><td>Vercel</td></tr>
+    </table>
+  </div></section>
+
+
+  <section class="detail-gallery-hero">
+    <div class="gallery-hero-inner">
+      <h2><span data-i18n-html="detail.screenshots">&#x1F4F8; <span>Screenshots</span></span></h2>
+      <div class="gallery-grid-hero">
+    <div class="gallery-item-hero" onclick="openLightbox(this)"><img src="../assets/screenshots/interview/main.png" alt="Screenshot" /></div>
+    <div class="gallery-item-hero" onclick="openLightbox(this)"><img src="../assets/screenshots/interview/ss1.png" alt="Screenshot" /></div>
+    <div class="gallery-item-hero" onclick="openLightbox(this)"><img src="../assets/screenshots/interview/ss2.png" alt="Screenshot" /></div>
+    <div class="gallery-item-hero" onclick="openLightbox(this)"><img src="../assets/screenshots/interview/ss3.png" alt="Screenshot" /></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="lightbox" id="lightbox" onclick="closeLightbox()"><button class="lightbox-close" onclick="closeLightbox()">&times;</button><img id="lightboxImg" src="" alt="Full screenshot" /></div>
+  <footer class="detail-footer"><p data-i18n="footer.copy">&copy; 2026 Ammar Tyo Pasaribu</p></footer>
+  <script src="../script.js"></script>
+  <script src="../i18n.js"></script>
+  <script>function openLightbox(el){document.getElementById('lightboxImg').src=el.querySelector('img').src;document.getElementById('lightbox').classList.add('active');}function closeLightbox(){document.getElementById('lightbox').classList.remove('active');}document.addEventListener('keydown',e=>{if(e.key==='Escape')closeLightbox();});</script>
+</body>
+</html>

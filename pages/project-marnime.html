@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MaRnime &#x2014; Project Detail</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../style.css" /><link rel="stylesheet" href="../project-detail.css" />
+</head>
+<body>
+  <canvas id="particleCanvas"></canvas>
+  <nav class="detail-nav"><a href="../index.html#projects" class="back-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg data-i18n="detail.back">Back to Projects</a><span class="detail-nav-title">MaRnime</span>  <button class="lang-toggle" id="langToggle" aria-label="Toggle language">EN</button>
+  </nav>
+
+<section class="detail-hero"><div class="detail-content">
+    <h1>MaRnime &#x1F30C;</h1>
+    <p class="detail-description" data-i18n-html="mn.desc">Website anime modern dengan tema Aurora Dark yang elegan. Jelajahi, lacak, dan kelola daftar anime kamu menggunakan data dari AniList GraphQL API. Dilengkapi watchlist, profil, dan multibahasa.</p>
+    <div class="detail-tech-row">
+      <span class="tech-front">Next.js 16</span><span class="tech-front">React</span><span class="tech-front">TypeScript</span><span class="tech-front">Tailwind CSS 4</span><span class="tech-other">Framer Motion</span><span class="tech-db">Supabase</span><span class="tech-other">AniList GraphQL</span><span class="tech-other">Vercel</span>
+    </div>
+    <div class="detail-links">
+      <a href="https://marnime.vercel.app/" target="_blank" data-i18n="btn.demo">Live Demo</a>
+      <a href="https://github.com/AmmarTyoPasaribu/MaRnime" target="_blank" data-i18n="btn.source">Source Code</a>
+    </div>
+    <div class="detail-divider"></div>
+  </div></section>
+
+  <section class="detail-section"><div class="detail-content">
+    <h2><span data-i18n-html="detail.features">&#x2728; <span>Features</span></span></h2>
+    <div class="features-grid">
+      <div class="feature-item"><span class="feature-icon">&#x2726;</span><div data-i18n-html="mn.f1"><strong>Jelajahi Anime</strong> &#x2014; Filter berdasarkan genre, format, status, musim, dan tahun</div></div>
+      <div class="feature-item"><span class="feature-icon">&#x2726;</span><div data-i18n-html="mn.f2"><strong>Detail Anime</strong> &#x2014; Sinopsis, karakter, staf, relasi, rekomendasi, dan trailer</div></div>
+      <div class="feature-item"><span class="feature-icon">&#x2726;</span><div data-i18n-html="mn.f3"><strong>Anime Musiman</strong> &#x2014; Anime sedang tayang per musim dengan countdown episode</div></div>
+      <div class="feature-item"><span class="feature-icon">&#x2726;</span><div data-i18n-html="mn.f4"><strong>Watchlist</strong> &#x2014; Tambah anime ke daftar tontonan (Planning, Watching, Completed)</div></div>
+      <div class="feature-item"><span class="feature-icon">&#x2726;</span><div data-i18n-html="mn.f5"><strong>Autentikasi</strong> &#x2014; Daftar dan masuk dengan email &amp; password via Supabase</div></div>
+      <div class="feature-item"><span class="feature-icon">&#x2726;</span><div data-i18n-html="mn.f6"><strong>Multibahasa</strong> &#x2014; Toggle bahasa English / Indonesia</div></div>
+    </div>
+  </div></section>
+
+  <section class="detail-section"><div class="detail-content">
+    <h2><span data-i18n-html="detail.tech">&#x1F6E0; <span>Tech Stack</span></span></h2>
+    <table class="tech-table">
+      <tr><td>Frontend</td><td>Next.js 16, React, TypeScript</td></tr>
+      <tr><td>Styling</td><td>Tailwind CSS 4, Custom Aurora Dark Theme</td></tr>
+      <tr><td>Animation</td><td>Framer Motion</td></tr>
+      <tr><td>Data API</td><td>AniList GraphQL API</td></tr>
+      <tr><td>Auth &amp; DB</td><td>Supabase (Auth + PostgreSQL)</td></tr>
+      <tr><td>Hosting</td><td>Vercel</td></tr>
+    </table>
+  </div></section>
+
+
+  <section class="detail-gallery-hero">
+    <div class="gallery-hero-inner">
+      <h2><span data-i18n-html="detail.screenshots">&#x1F4F8; <span>Screenshots</span></span></h2>
+      <div class="gallery-grid-hero">
+    <div class="gallery-item-hero" onclick="openLightbox(this)"><img src="../assets/screenshots/marnime/main.png" alt="Screenshot" /></div>
+    <div class="gallery-item-hero" onclick="openLightbox(this)"><img src="../assets/screenshots/marnime/ss1.png" alt="Screenshot" /></div>
+    <div class="gallery-item-hero" onclick="openLightbox(this)"><img src="../assets/screenshots/marnime/ss2.png" alt="Screenshot" /></div>
+    <div class="gallery-item-hero" onclick="openLightbox(this)"><img src="../assets/screenshots/marnime/ss3.png" alt="Screenshot" /></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="lightbox" id="lightbox" onclick="closeLightbox()"><button class="lightbox-close" onclick="closeLightbox()">&times;</button><img id="lightboxImg" src="" alt="Full screenshot" /></div>
+  <footer class="detail-footer"><p data-i18n="footer.copy">&copy; 2026 Ammar Tyo Pasaribu</p></footer>
+  <script src="../script.js"></script>
+  <script src="../i18n.js"></script>
+  <script>function openLightbox(el){document.getElementById('lightboxImg').src=el.querySelector('img').src;document.getElementById('lightbox').classList.add('active');}function closeLightbox(){document.getElementById('lightbox').classList.remove('active');}document.addEventListener('keydown',e=>{if(e.key==='Escape')closeLightbox();});</script>
+</body>
+</html>

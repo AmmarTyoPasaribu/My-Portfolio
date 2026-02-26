@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ammar Tyo Pasaribu — Portfolio</title>
+  <meta name="description" content="Personal portfolio of Ammar Tyo Pasaribu — Information Systems Student at Hasanuddin University passionate about Data Science & Web Development." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ============ PARTICLE BACKGROUND ============ -->
+  <canvas id="particleCanvas"></canvas>
+
+  <!-- ============ NAVBAR ============ -->
+  <nav class="navbar" id="navbar">
+    <a href="#" class="nav-logo">&lt;<span>Portfolio</span> /&gt;</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about">About</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#certifications">Certifications</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="lang-toggle" id="langToggle" aria-label="Toggle language">EN</button>
+  </nav>
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="home">
+    <div class="hero-bg-shapes">
+      <div class="shape shape-1"></div>
+      <div class="shape shape-2"></div>
+      <div class="shape shape-3"></div>
+    </div>
+    <div class="hero-content">
+      <div class="hero-text">
+        <p class="hero-greeting" data-i18n="hero.greeting">Hello, I'm</p>
+        <h1 class="hero-name">Ammar Tyo Pasaribu</h1>
+        <p class="hero-tagline">
+          <span class="tagline-static" data-i18n="hero.tagline">I'm a </span>
+          <span class="typewriter" id="typewriter"></span>
+          <span class="cursor">|</span>
+        </p>
+        <p class="hero-description" data-i18n="hero.desc">
+          Full Stack Developer who blends web technologies with AI and Data Science to build smart, real-world solutions.
+        </p>
+        <div class="hero-cta">
+          <a href="#projects" class="btn btn-primary" data-i18n="hero.cta1">View My Work</a>
+          <a href="assets/docs/CV_Ammar_Tyo_Pasaribu.pdf" target="_blank" class="btn btn-outline" data-i18n="about.cv">Download CV</a>
+        </div>
+        <div class="hero-socials">
+          <a href="https://github.com/AmmarTyoPasaribu" target="_blank" rel="noopener" aria-label="GitHub" class="social-link">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+          </a>
+          <a href="https://linkedin.com/in/ammartyopasaribu" target="_blank" rel="noopener" aria-label="LinkedIn" class="social-link">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </a>
+          <a href="mailto:ammar123tyo12@gmail.com" aria-label="Email" class="social-link">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+          </a>
+          <a href="tel:+62895620163633" aria-label="Phone" class="social-link">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="hero-image">
+        <div class="image-wrapper">
+          <div class="image-border"></div>
+          <img src="assets/img/profile1.png" alt="Ammar Tyo Pasaribu — Profile Photo" />
+        </div>
+      </div>
+    </div>
+    <a href="#about" class="scroll-indicator" aria-label="Scroll down">
+      <div class="mouse">
+        <div class="wheel"></div>
+      </div>
+    </a>
+  </section>
+
+  <!-- ============ ABOUT ============ -->
+  <section class="section about" id="about">
+    <div class="container">
+      <h2 class="section-title reveal" data-i18n-html="about.title">About <span>Me</span></h2>
+      <div class="about-grid">
+        <div class="about-image reveal">
+          <div class="about-img-wrapper">
+            <img src="assets/img/profile2.png" alt="About Ammar Tyo Pasaribu" />
+          </div>
+        </div>
+        <div class="about-text reveal">
+          <p data-i18n-html="about.p1">
+            A Bachelor of Information Systems from Universitas Hasanuddin with a strong foundation in full-stack web development and a growing passion for AI and Data Science. Proficient in Python (Flask), JavaScript, Node.js, Express.js, React.js/Next.js, Laravel, and SQL — always eager to learn, build, and turn complex ideas into clean, working solutions.
+          </p>
+          <div class="about-tags">
+            <h4 data-i18n="about.skill">Skill & Interest</h4>
+            <div class="tag-list">
+              <span class="tag-pill">Web Development</span>
+              <span class="tag-pill">Data Science</span>
+              <span class="tag-pill">Machine Learning</span>
+              <span class="tag-pill">Deep Learning</span>
+              <span class="tag-pill">Data Visualization</span>
+              <span class="tag-pill">Artificial Intelligence</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- ============ EDUCATION ============ -->
+  <section class="section" id="education">
+    <div class="container">
+      <h2 class="section-title reveal" data-i18n-html="edu.title">My <span>Education</span></h2>
+      <p class="section-subtitle reveal" data-i18n="edu.sub">Academic background</p>
+      <div class="education-timeline">
+
+        <!-- Universitas Hasanuddin -->
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="timeline-period" data-i18n="edu.unhas.period">2022 — 2026</div>
+            <h3>Universitas Hasanuddin</h3>
+            <p class="timeline-role" data-i18n="edu.unhas.role">Bachelor of Information Systems — GPA: 3.93 / 4.00</p>
+            <p data-i18n-html="edu.unhas.desc">Bakti BCA Scholarship Recipient.<br>Coursework: Web Development, Data Science, Machine Learning, Deep Learning, Rekayasa Sistem Informasi.</p>
+          </div>
+        </div>
+
+        <!-- SMAN 1 Maros -->
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="timeline-period">2019 — 2022</div>
+            <h3>SMAN 1 Maros</h3>
+            <p class="timeline-role" data-i18n="edu.sma.role">Science Major — Score: 91.2 / 100.0</p>
+            <p data-i18n="edu.sma.desc">Head of OSIS Academic & Sports Division. 1st Place KSN-K Maros Informatics 2019 & 2020 by Ministry of Education.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- ============ EXPERIENCE ============ -->
+  <section class="section" id="experience">
+    <div class="container">
+      <h2 class="section-title reveal" data-i18n-html="exp.title">My <span>Experience</span></h2>
+      <p class="section-subtitle reveal" data-i18n="exp.sub">Internship & organizational activities</p>
+      <div class="education-timeline">
+
+        <!-- Magang -->
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="timeline-period">Feb 2025 — Jul 2025</div>
+            <h3>Kantor Otoritas Bandar Udara Wilayah V Makassar</h3>
+            <p class="timeline-role" data-i18n="exp.intern.role">Internship — Airport Pass Service Division</p>
+            <p data-i18n="exp.intern.desc">Managed recording and data input for up to 40 applicants/day. Served up to 200 applicants/week. Handled correspondence and administration, and compiled weekly reports for airport pass printing monitoring.</p>
+          </div>
+        </div>
+
+        <!-- Organisasi Himatika -->
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="timeline-period">Oct 2024 — Jul 2025</div>
+            <h3>Badan Eksekutif Himatika FMIPA UNHAS</h3>
+            <p class="timeline-role" data-i18n="exp.himatika.role">Member of Academic & Student Affairs Division</p>
+            <p data-i18n="exp.himatika.desc">Speaker at Himatika Talks on the path to success through scholarships. Managed student member databases and provided academic support in Information Systems, Mathematics, and Actuarial Science.</p>
+          </div>
+        </div>
+
+        <!-- Ketua OSIS -->
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="timeline-period">2020 — 2021</div>
+            <h3>OSIS SMAN 1 Maros</h3>
+            <p class="timeline-role" data-i18n="exp.osis.role">Head of Academic Achievement, Arts & Sports Division</p>
+            <p data-i18n="exp.osis.desc">Recorded and compiled all student achievements. Led Sports & Arts Week 2020 involving 60 committee members and 900 student participants. Managed 20+ extracurriculars.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- ============ ACHIEVEMENTS ============ -->
+  <section class="section achievements" id="achievements">
+    <div class="container">
+      <h2 class="section-title reveal" data-i18n-html="ach.title">My <span>Achievements</span></h2>
+      <p class="section-subtitle reveal" data-i18n="ach.sub">Awards and recognitions I've earned</p>
+      <div class="achievements-grid">
+
+        <div class="achievement-card reveal">
+          <div class="achievement-icon">🏆</div>
+          <div class="achievement-info">
+            <h3>Beasiswa Bakti BCA</h3>
+            <span class="achievement-year">2024 — 2025</span>
+            <p data-i18n="ach.bca.desc">Selected as a Bakti BCA Scholarship recipient through academic achievement selection. Participated in a Transformational Workshop and engaged in a Business Impact Plan Competition to support UMKM growth in Makassar.</p>
+          </div>
+        </div>
+
+        <div class="achievement-card reveal">
+          <div class="achievement-icon">🥇</div>
+          <div class="achievement-info">
+            <h3>Juara 1 KSN-K Bidang Informatika</h3>
+            <span class="achievement-year">2020</span>
+            <p data-i18n="ach.ksn20.desc">Won 1st Place in the National Science Competition at the District level in Maros organized by the Ministry of Education in 2020.</p>
+          </div>
+        </div>
+
+        <div class="achievement-card reveal">
+          <div class="achievement-icon">🥇</div>
+          <div class="achievement-info">
+            <h3>Juara 1 KSN-K Bidang Informatika</h3>
+            <span class="achievement-year">2019</span>
+            <p data-i18n="ach.ksn19.desc">Won 1st Place in the National Science Competition at the District level in Maros organized by the Ministry of Education in 2019.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- ============ PROJECTS ============ -->
+  <section class="section projects" id="projects">
+    <div class="container container-wide">
+      <h2 class="section-title reveal" data-i18n-html="proj.title">My <span>Projects</span></h2>
+      <p class="section-subtitle reveal" data-i18n="proj.sub">A showcase of web applications I've built</p>
+      <div class="projects-grid-3">
+
+        <!-- 1: SafeNurse -->
+        <article class="project-card reveal">
+          <div class="project-image">
+            <img src="assets/screenshots/safenurse/main.png" alt="SafeNurse" loading="lazy" />
+          </div>
+          <div class="project-info">
+            <h3>SafeNurse 🏥</h3>
+            <p data-i18n="proj.safenurse.desc">Sistem pelaporan insiden keselamatan pasien dengan chatbot AI, voice input, auto kategorisasi, dan multi-role dashboard.</p>
+            <div class="project-tech">
+              <span class="tech-front">Next.js</span>
+              <span class="tech-back">Express.js</span>
+              <span class="tech-db">Supabase</span>
+              <span class="tech-ai">AI/LLM</span>
+            </div>
+            <div class="project-actions">
+              <a href="pages/project-safenurse.html" class="btn-action btn-demo" data-i18n="btn.detail">Detail</a>
+              <a href="https://safenurse-testing-mar.vercel.app/" target="_blank" class="btn-action btn-demo" data-i18n="btn.demo">Live Demo</a>
+              <a href="https://github.com/AmmarTyoPasaribu/SafeNurseTestingMar" target="_blank" class="btn-action btn-demo" data-i18n="btn.source">Source Code</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 2: R&R ShoeStore -->
+        <article class="project-card reveal">
+          <div class="project-image">
+            <img src="assets/screenshots/shoestore/main.png" alt="R&R ShoeStore" loading="lazy" />
+          </div>
+          <div class="project-info">
+            <h3>R&amp;R ShoeStore &#x1F45F;</h3>
+            <p data-i18n="proj.shoestore.desc">E-commerce sepatu full-stack dengan sistem rekomendasi AI berbasis NMF machine learning dan panel admin lengkap.</p>
+            <div class="project-tech">
+              <span class="tech-front">React</span>
+              <span class="tech-back">Flask</span>
+              <span class="tech-db">Supabase</span>
+              <span class="tech-ai">ML/NMF</span>
+            </div>
+            <div class="project-actions">
+              <a href="pages/project-shoestore.html" class="btn-action btn-demo" data-i18n="btn.detail">Detail</a>
+              <a href="https://randr-shoestore.onrender.com/" target="_blank" class="btn-action btn-demo" data-i18n="btn.demo">Live Demo</a>
+              <a href="https://github.com/AmmarTyoPasaribu/RandR-ShoeStore" target="_blank" class="btn-action btn-demo" data-i18n="btn.source">Source Code</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 3: MaRental -->
+        <article class="project-card reveal">
+          <div class="project-image">
+            <img src="assets/screenshots/marental/main.png" alt="MaRental" loading="lazy" />
+          </div>
+          <div class="project-info">
+            <h3>MaRental 🚗</h3>
+            <p data-i18n="proj.marental.desc">Sistem rental mobil online full stack dengan booking otomatis, manajemen driver, admin dashboard, dan upload bukti pembayaran.</p>
+            <div class="project-tech">
+              <span class="tech-front">Blade/Tailwind</span>
+              <span class="tech-back">Laravel</span>
+              <span class="tech-db">Supabase</span>
+              <span class="tech-other">Cloudinary</span>
+            </div>
+            <div class="project-actions">
+              <a href="pages/project-marental.html" class="btn-action btn-demo" data-i18n="btn.detail">Detail</a>
+              <a href="https://marental.onrender.com/" target="_blank" class="btn-action btn-demo" data-i18n="btn.demo">Live Demo</a>
+              <a href="https://github.com/AmmarTyoPasaribu/MaRental" target="_blank" class="btn-action btn-demo" data-i18n="btn.source">Source Code</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 4: MaRnime -->
+        <article class="project-card reveal">
+          <div class="project-image">
+            <img src="assets/screenshots/marnime/main.png" alt="MaRnime" loading="lazy" />
+          </div>
+          <div class="project-info">
+            <h3>MaRnime &#x1F30C;</h3>
+            <p data-i18n="proj.marnime.desc">Website anime modern dengan tema Aurora Dark. Jelajahi, lacak watchlist, dan kelola daftar anime kamu dengan data dari AniList.</p>
+            <div class="project-tech">
+              <span class="tech-front">Next.js/TS</span>
+              <span class="tech-other">Framer Motion</span>
+              <span class="tech-db">Supabase</span>
+              <span class="tech-other">AniList API</span>
+            </div>
+            <div class="project-actions">
+              <a href="pages/project-marnime.html" class="btn-action btn-demo" data-i18n="btn.detail">Detail</a>
+              <a href="https://marnime.vercel.app/" target="_blank" class="btn-action btn-demo" data-i18n="btn.demo">Live Demo</a>
+              <a href="https://github.com/AmmarTyoPasaribu/MaRnime" target="_blank" class="btn-action btn-demo" data-i18n="btn.source">Source Code</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 5: MaRgames -->
+        <article class="project-card reveal">
+          <div class="project-image">
+            <img src="assets/screenshots/margames/main.png" alt="MaRgames" loading="lazy" />
+          </div>
+          <div class="project-info">
+            <h3>MaRgames 🎮</h3>
+            <p data-i18n="proj.margames.desc">Koleksi 15 mini-game HTML5 modern dengan dark glassmorphism, SFX, high score, dan PWA support — playable offline.</p>
+            <div class="project-tech">
+              <span class="tech-front">HTML/CSS/JS</span>
+              <span class="tech-other">Canvas API</span>
+              <span class="tech-other">PWA</span>
+            </div>
+            <div class="project-actions">
+              <a href="pages/project-margames.html" class="btn-action btn-demo" data-i18n="btn.detail">Detail</a>
+              <a href="https://margames.vercel.app/" target="_blank" class="btn-action btn-demo" data-i18n="btn.demo">Live Demo</a>
+              <a href="https://github.com/AmmarTyoPasaribu/MaRgames" target="_blank" class="btn-action btn-demo" data-i18n="btn.source">Source Code</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 6: MaR Interview -->
+        <article class="project-card reveal">
+          <div class="project-image">
+            <img src="assets/screenshots/interview/main.png" alt="MaR Interview" loading="lazy" />
+          </div>
+          <div class="project-info">
+            <h3>MaR Interview 📋</h3>
+            <p data-i18n="proj.interview.desc">Aplikasi penilaian interview kandidat berbasis web. Buat template pertanyaan, scoring real-time, dan leaderboard ranking otomatis.</p>
+            <div class="project-tech">
+              <span class="tech-front">HTML/Tailwind</span>
+              <span class="tech-back">Node.js</span>
+              <span class="tech-db">Supabase</span>
+            </div>
+            <div class="project-actions">
+              <a href="pages/project-interview.html" class="btn-action btn-demo" data-i18n="btn.detail">Detail</a>
+              <a href="https://mar-interview.vercel.app/" target="_blank" class="btn-action btn-demo" data-i18n="btn.demo">Live Demo</a>
+              <a href="https://github.com/AmmarTyoPasaribu/MaR-Interview" target="_blank" class="btn-action btn-demo" data-i18n="btn.source">Source Code</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 7: GrabMaR -->
+        <article class="project-card reveal">
+          <div class="project-image">
+            <img src="assets/screenshots/grabmar/main.png" alt="GrabMaR" loading="lazy" />
+          </div>
+          <div class="project-info">
+            <h3>GrabMaR 💰</h3>
+            <p data-i18n="proj.grabmar.desc">Kalkulator pendapatan harian driver Grab. Hitung uang digital & cash, simpan riwayat dengan login, dan lihat detail breakdown.</p>
+            <div class="project-tech">
+              <span class="tech-front">HTML/Tailwind</span>
+              <span class="tech-back">Node.js</span>
+              <span class="tech-db">Supabase</span>
+              <span class="tech-other">JWT</span>
+            </div>
+            <div class="project-actions">
+              <a href="pages/project-grabmar.html" class="btn-action btn-demo" data-i18n="btn.detail">Detail</a>
+              <a href="https://grabmar.vercel.app/" target="_blank" class="btn-action btn-demo" data-i18n="btn.demo">Live Demo</a>
+              <a href="https://github.com/AmmarTyoPasaribu/GrabMaR" target="_blank" class="btn-action btn-demo" data-i18n="btn.source">Source Code</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 8: Desa Bangkalaloe -->
+        <article class="project-card reveal">
+          <div class="project-image">
+            <img src="assets/screenshots/desabangkalaloe/main.png" alt="Desa Bangkalaloe" loading="lazy" />
+          </div>
+          <div class="project-info">
+            <h3>Desa Bangkalaloe 🏡</h3>
+            <p data-i18n="proj.desa.desc">Website profil desa untuk program KKN. Menampilkan profil, sejarah, monografi, infografis, UMKM, dan potensi desa.</p>
+            <div class="project-tech">
+              <span class="tech-front">HTML/Tailwind</span>
+              <span class="tech-front">JavaScript</span>
+              <span class="tech-other">Google Maps</span>
+            </div>
+            <div class="project-actions">
+              <a href="pages/project-desabangkalaloe.html" class="btn-action btn-demo" data-i18n="btn.detail">Detail</a>
+              <a href="https://desabangkalaloe.vercel.app/" target="_blank" class="btn-action btn-demo" data-i18n="btn.demo">Live Demo</a>
+              <a href="https://github.com/AmmarTyoPasaribu/desabangkalaloe" target="_blank" class="btn-action btn-demo" data-i18n="btn.source">Source Code</a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- ============ CERTIFICATIONS ============ -->
+  <section class="section certifications" id="certifications">
+    <div class="container">
+      <h2 class="section-title reveal" data-i18n-html="cert.title"><span>Certifications</span></h2>
+      <p class="section-subtitle reveal" data-i18n="cert.sub">Certifications & Achievements</p>
+
+      <!-- Dicoding — row 1 (3 visible + 2 hidden) -->
+      <div class="cert-grid reveal" id="certDicoding">
+        <div class="cert-card">
+          <div class="cert-img"><img src="assets/sertifikat/dicoding/sertifikat_datascience_page-0001.jpg" alt="Data Science" loading="lazy" /></div>
+          <div class="cert-info">
+            <h4>Belajar Dasar Data Science</h4>
+            <p class="cert-org">Dicoding Indonesia</p>
+            <span class="cert-date">2024</span>
+          </div>
+        </div>
+        <div class="cert-card">
+          <div class="cert-img"><img src="assets/sertifikat/dicoding/sertifikat_python_page-0001.jpg" alt="Python" loading="lazy" /></div>
+          <div class="cert-info">
+            <h4>Memulai Pemrograman dengan Python</h4>
+            <p class="cert-org">Dicoding Indonesia</p>
+            <span class="cert-date">2024</span>
+          </div>
+        </div>
+        <div class="cert-card">
+          <div class="cert-img"><img src="assets/sertifikat/dicoding/sertifikat_visualisasi_data_page-0001.jpg" alt="Visualisasi Data" loading="lazy" /></div>
+          <div class="cert-info">
+            <h4>Belajar Dasar Visualisasi Data</h4>
+            <p class="cert-org">Dicoding Indonesia</p>
+            <span class="cert-date">2024</span>
+          </div>
+        </div>
+        <div class="cert-card cert-hidden">
+          <div class="cert-img"><img src="assets/sertifikat/dicoding/sertifikat_SQL_page-0001.jpg" alt="SQL" loading="lazy" /></div>
+          <div class="cert-info">
+            <h4>Belajar Dasar Structured Query Language (SQL)</h4>
+            <p class="cert-org">Dicoding Indonesia</p>
+            <span class="cert-date">2024</span>
+          </div>
+        </div>
+        <div class="cert-card cert-hidden">
+          <div class="cert-img"><img src="assets/sertifikat/dicoding/sertifikat_AI_page-0001.jpg" alt="AI" loading="lazy" /></div>
+          <div class="cert-info">
+            <h4>Belajar Dasar AI</h4>
+            <p class="cert-org">Dicoding Indonesia</p>
+            <span class="cert-date">2024</span>
+          </div>
+        </div>
+      </div>
+      <button class="cert-toggle-btn" data-target="certDicoding" data-label-more="More Dicoding Certifications ▼" data-label-less="Less Dicoding Certifications ▲">More Dicoding Certifications ▼</button>
+
+      <!-- MySkill — row 2 (3 visible + 6 hidden) -->
+      <div class="cert-grid reveal" id="certMySkill">
+        <div class="cert-card">
+          <div class="cert-img"><img src="assets/sertifikat/MySkill/Ammar Tyo Pasaribu - E-Certif SC Data Visualization MySkill_page-0001.jpg" alt="Data Visualization" loading="lazy" /></div>
+          <div class="cert-info">
+            <h4>Data Visualization</h4>
+            <p class="cert-org">MySkill</p>
+            <span class="cert-date">2024</span>
+          </div>
+        </div>
+        <div class="cert-card">
+          <div class="cert-img"><img src="assets/sertifikat/MySkill/Ammar Tyo Pasaribu - E-Certif SC Introduction to Project Management MySkill_page-0001.jpg" alt="Project Management" loading="lazy" /></div>
+          <div class="cert-info">
+            <h4>Introduction to Project Management</h4>
+            <p class="cert-org">MySkill</p>
+            <span class="cert-date">2024</span>
+          </div>
+        </div>
+        <div class="cert-card">
+          <div class="cert-img"><img src="assets/sertifikat/MySkill/Ammar Tyo Pasaribu - E-Certif SC Introduction to UX Research MySkill_page-0001.jpg" alt="UX Research" loading="lazy" /></div>
+          <div class="cert-info">
+            <h4>Introduction to UX Research</h4>
+            <p class="cert-org">MySkill</p>
+            <span class="cert-date">2024</span>
+          </div>
+        </div>
+        <div class="cert-card cert-hidden">
+          <div class="cert-img"><img src="assets/sertifikat/MySkill/Ammar Tyo Pasaribu_E-Certificate Frontend Fundamentals MySkill x SGU_page-0001.jpg" alt="Frontend Fundamentals" loading="lazy" /></div>
+          <div class="cert-info">
+            <h4>Frontend Fundamentals</h4>
+            <p class="cert-org">MySkill x SGU</p>
+            <span class="cert-date">2024</span>
+          </div>
+        </div>
+        <div class="cert-card cert-hidden">
+          <div class="cert-img"><img src="assets/sertifikat/MySkill/Ammar Tyo Pasaribu - E-Certif SC Brand Identity Design MySkill_page-0001.jpg" alt="Brand Identity" loading="lazy" /></div>
+          <div class="cert-info">
+            <h4>Brand Identity Design</h4>
+            <p class="cert-org">MySkill</p>
+            <span class="cert-date">2024</span>
+          </div>
+        </div>
+        <div class="cert-card cert-hidden">
+          <div class="cert-img"><img src="assets/sertifikat/MySkill/Ammar Tyo Pasaribu - E-Certif SC Corporate Finance Introduction MySkill_page-0001.jpg" alt="Corporate Finance" loading="lazy" /></div>
+          <div class="cert-info">
+            <h4>Corporate Finance Introduction</h4>
+            <p class="cert-org">MySkill</p>
+            <span class="cert-date">2024</span>
+          </div>
+        </div>
+        <div class="cert-card cert-hidden">
+          <div class="cert-img"><img src="assets/sertifikat/MySkill/Ammar Tyo Pasaribu_E-Certif SC Creating Business Pitch Deck MySkill x SGU_page-0001.jpg" alt="Pitch Deck" loading="lazy" /></div>
+          <div class="cert-info">
+            <h4>Creating Business Pitch Deck</h4>
+            <p class="cert-org">MySkill x SGU</p>
+            <span class="cert-date">2024</span>
+          </div>
+        </div>
+        <div class="cert-card cert-hidden">
+          <div class="cert-img"><img src="assets/sertifikat/MySkill/Ammar Tyo Pasaribu_E-Certificate SC Intro to Recruitment Process Deloitte X MySkill_page-0001.jpg" alt="Recruitment" loading="lazy" /></div>
+          <div class="cert-info">
+            <h4>Intro to Recruitment Process</h4>
+            <p class="cert-org">Deloitte x MySkill</p>
+            <span class="cert-date">2024</span>
+          </div>
+        </div>
+        <div class="cert-card cert-hidden">
+          <div class="cert-img"><img src="assets/sertifikat/MySkill/Ammar Tyo Pasaribu_E-Certificate SC Scholarship Interview MySkill x Deloitte_page-0001.jpg" alt="Scholarship Interview" loading="lazy" /></div>
+          <div class="cert-info">
+            <h4>Scholarship Interview</h4>
+            <p class="cert-org">MySkill x Deloitte</p>
+            <span class="cert-date">2024</span>
+          </div>
+        </div>
+      </div>
+      <button class="cert-toggle-btn" data-target="certMySkill" data-label-more="More MySkill Certifications ▼" data-label-less="Less MySkill Certifications ▲">More MySkill Certifications ▼</button>
+
+      <!-- Kominfo — row 3 (3 visible + 2 hidden) -->
+      <div class="cert-grid reveal" id="certKominfo">
+        <div class="cert-card">
+          <div class="cert-img"><img src="assets/sertifikat/Kominfo/Sertifikat_AMMAR TYO PASARIBU_AI Engineer For Milenial_pages-to-jpg-0001.jpg" alt="AI Engineer" loading="lazy" /></div>
+          <div class="cert-info">
+            <h4>AI Engineer For Milenial</h4>
+            <p class="cert-org">Kominfo — DTS</p>
+            <span class="cert-date">2024</span>
+          </div>
+        </div>
+        <div class="cert-card">
+          <div class="cert-img"><img src="assets/sertifikat/Kominfo/Sertifikat_AMMAR TYO PASARIBU_Fundamental Data Science_pages-to-jpg-0001.jpg" alt="Fundamental DS" loading="lazy" /></div>
+          <div class="cert-info">
+            <h4>Fundamental Data Science</h4>
+            <p class="cert-org">Kominfo — DTS</p>
+            <span class="cert-date">2024</span>
+          </div>
+        </div>
+        <div class="cert-card">
+          <div class="cert-img"><img src="assets/sertifikat/Kominfo/Sertifikat_AMMAR TYO PASARIBU_Intermediate Data Science_pages-to-jpg-0001.jpg" alt="Intermediate DS" loading="lazy" /></div>
+          <div class="cert-info">
+            <h4>Intermediate Data Science</h4>
+            <p class="cert-org">Kominfo — DTS</p>
+            <span class="cert-date">2024</span>
+          </div>
+        </div>
+        <div class="cert-card cert-hidden">
+          <div class="cert-img"><img src="assets/sertifikat/Kominfo/Sertifikat_AMMAR TYO PASARIBU_Pengenalan Data Science dan Pemanfaatannya di Berbagai Sektor_pages-to-jpg-0001.jpg" alt="Pengenalan DS" loading="lazy" /></div>
+          <div class="cert-info">
+            <h4>Pengenalan Data Science dan Pemanfaatannya</h4>
+            <p class="cert-org">Kominfo — DTS</p>
+            <span class="cert-date">2024</span>
+          </div>
+        </div>
+        <div class="cert-card cert-hidden">
+          <div class="cert-img"><img src="assets/sertifikat/Kominfo/Sertifikat_AMMAR TYO PASARIBU_Wawasan Karir dalam Bidang Data Analytics_pages-to-jpg-0001.jpg" alt="Data Analytics" loading="lazy" /></div>
+          <div class="cert-info">
+            <h4>Wawasan Karir dalam Bidang Data Analytics</h4>
+            <p class="cert-org">Kominfo — DTS</p>
+            <span class="cert-date">2024</span>
+          </div>
+        </div>
+      </div>
+      <button class="cert-toggle-btn" data-target="certKominfo" data-label-more="More Kominfo Certifications ▼" data-label-less="Less Kominfo Certifications ▲">More Kominfo Certifications ▼</button>
+
+      <!-- Other — row 4 (always visible, no toggle) -->
+      <div class="cert-grid reveal">
+        <div class="cert-card">
+          <div class="cert-img"><img src="assets/sertifikat/Sertif/Sertifikat BNSP Data Analyst oleh Bank Indonesia.jpg" alt="BNSP Data Analyst" loading="lazy" /></div>
+          <div class="cert-info">
+            <h4 data-i18n="cert.bnsp">BNSP Data Analyst Certification</h4>
+            <p class="cert-org">BNSP — Bank Indonesia</p>
+            <span class="cert-date">2024</span>
+          </div>
+        </div>
+        <div class="cert-card">
+          <div class="cert-img"><img src="assets/sertifikat/Sertif/juara 1 Kompetisi Sains Nasional Tingkat Kabupaten (KSN-K) - Informatika Pusat Prestasi Nasional (Puspresnas), Kemdikbudristek Maros, 2020.jpg.jpg" alt="KSN-K 2020" loading="lazy" /></div>
+          <div class="cert-info">
+            <h4 data-i18n="cert.ksn20">1st Place KSN-K Informatics 2020</h4>
+            <p class="cert-org">Puspresnas, Kemdikbudristek</p>
+            <span class="cert-date">2020</span>
+          </div>
+        </div>
+        <div class="cert-card">
+          <div class="cert-img"><img src="assets/sertifikat/Sertif/juara 1 Kompetisi Sains Nasional Tingkat Kabupaten (KSN-K) - Informatika Pusat Prestasi Nasional (Puspresnas), Kemdikbudristek Maros, 2021.jpg" alt="KSN-K 2021" loading="lazy" /></div>
+          <div class="cert-info">
+            <h4 data-i18n="cert.ksn21">1st Place KSN-K Informatics 2021</h4>
+            <p class="cert-org">Puspresnas, Kemdikbudristek</p>
+            <span class="cert-date">2021</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+
+  <section class="section skills" id="skills">
+    <div class="container">
+      <h2 class="section-title reveal" data-i18n-html="skills.title">My <span>Skills</span></h2>
+      <p class="section-subtitle reveal" data-i18n="skills.sub">Technologies, tools, and soft skills I work with</p>
+      <div class="skills-grid">
+
+        <div class="skill-card reveal">
+          <div class="skill-icon">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M1.5 0h21l-1.91 21.563L11.977 24l-8.564-2.438L1.5 0zm7.031 9.75l-.232-2.718 10.059.003.071-.757.541-6.03.066-.756H5.879l.174 2.006.066.756h8.727l-.249 2.724-.07.757H6.459l.174 2.006.066.756h8.241l-.304 3.324-.068.757-3.084.856-3.093-.856-.186-2.087h-2.86l.37 4.128L11.977 21l5.557-1.553.79-8.697z"/></svg>
+          </div>
+          <h3>HTML & CSS</h3>
+          <p data-i18n="skill.html">Semantic markup, responsive layouts, Tailwind CSS, animations, modern CSS features</p>
+          <div class="skill-bar"><div class="skill-fill" data-width="90"></div></div>
+        </div>
+
+        <div class="skill-card reveal">
+          <div class="skill-icon">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M0 0h24v24H0V0zm22.034 18.276c-.175-1.095-.888-2.015-3.003-2.873-.736-.345-1.554-.585-1.797-1.14-.091-.33-.105-.51-.046-.705.15-.646.915-.84 1.515-.66.39.12.75.42.976.9 1.034-.676 1.034-.676 1.755-1.125-.27-.42-.405-.6-.586-.78-.63-.705-1.469-1.065-2.834-1.034l-.705.089c-.676.165-1.32.525-1.71 1.005-1.14 1.291-.811 3.541.569 4.471 1.365 1.02 3.361 1.244 3.616 2.205.24 1.17-.87 1.545-1.966 1.41-.811-.18-1.26-.586-1.755-1.336l-1.83 1.051c.21.48.45.689.81 1.109 1.74 1.756 6.09 1.666 6.871-1.004.029-.09.24-.705.074-1.65l.046.067zm-8.983-7.245h-2.248c0 1.938-.009 3.864-.009 5.805 0 1.232.063 2.363-.138 2.711-.33.689-1.18.601-1.566.48-.396-.196-.597-.466-.83-.855-.063-.105-.11-.196-.127-.196l-1.825 1.125c.305.63.75 1.172 1.324 1.517.855.51 2.004.675 3.207.405.783-.226 1.458-.691 1.811-1.411.51-.93.402-2.07.397-3.346.012-2.054 0-4.109 0-6.179l.004-.056z"/></svg>
+          </div>
+          <h3>JavaScript</h3>
+          <p data-i18n="skill.js">ES6+, DOM manipulation, async programming, API integration, serverless functions</p>
+          <div class="skill-bar"><div class="skill-fill" data-width="85"></div></div>
+        </div>
+
+        <div class="skill-card reveal">
+          <div class="skill-icon">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M14.23 12.004a2.236 2.236 0 0 1-2.235 2.236 2.236 2.236 0 0 1-2.236-2.236 2.236 2.236 0 0 1 2.235-2.236 2.236 2.236 0 0 1 2.236 2.236zm2.648-10.69c-1.346 0-3.107.96-4.888 2.622-1.78-1.653-3.542-2.602-4.887-2.602-.31 0-.6.045-.862.126C4.16 2.012 3.28 4.073 3.636 7.212 1.394 7.975.2 9.094.2 10.406c0 1.314 1.198 2.436 3.447 3.2-.365 3.1.514 5.141 2.582 5.7.26.078.544.116.846.116 1.346 0 3.107-.96 4.888-2.624 1.78 1.654 3.542 2.603 4.887 2.603.31 0 .6-.045.862-.126 2.08-.558 2.963-2.619 2.607-5.758 2.238-.762 3.43-1.882 3.43-3.191 0-1.313-1.198-2.436-3.447-3.2.365-3.099-.514-5.14-2.582-5.697-.26-.078-.544-.117-.847-.117z"/></svg>
+          </div>
+          <h3>React / Next.js</h3>
+          <p data-i18n="skill.react">Component-based UI, hooks, SSR, routing, state management, API routes</p>
+          <div class="skill-bar"><div class="skill-fill" data-width="75"></div></div>
+        </div>
+
+        <div class="skill-card reveal">
+          <div class="skill-icon">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.998 24c-.321 0-.636-.084-.917-.246l-2.917-1.727c-.437-.243-.224-.33-.08-.38.581-.203.699-.249 1.32-.602.065-.037.15-.023.217.014l2.242 1.33c.082.045.197.045.272 0l8.735-5.04c.082-.045.134-.139.134-.236V7.07c0-.1-.052-.19-.137-.239L12.134 1.8c-.081-.047-.19-.047-.271 0L3.13 6.834c-.087.048-.14.143-.14.238v10.086c0 .095.053.186.138.235l2.393 1.38c1.297.65 2.09-.115 2.09-.883V7.97c0-.14.113-.25.254-.25h1.105c.139 0 .253.11.253.25v9.923c0 1.73-.942 2.723-2.582 2.723-.504 0-.902 0-2.01-.546l-2.29-1.32C1.786 18.422 1.5 17.7 1.5 16.925V6.84c0-.874.476-1.69 1.241-2.12L11.477.675a2.562 2.562 0 0 1 1.044 0l8.735 5.042c.765.432 1.244 1.249 1.244 2.123v10.083c0 .876-.48 1.693-1.244 2.123l-8.735 5.041c-.278.16-.597.245-.917.245l-.606-.332z"/></svg>
+          </div>
+          <h3>Node.js / Express</h3>
+          <p data-i18n="skill.node">REST APIs, Express, serverless functions, JWT authentication, database integration</p>
+          <div class="skill-bar"><div class="skill-fill" data-width="80"></div></div>
+        </div>
+
+        <div class="skill-card reveal">
+          <div class="skill-icon">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M14.25.18l.9.2.73.26.59.3.45.32.34.34.25.34.16.33.1.3.04.26.02.2-.01.13V8.5l-.05.63-.13.55-.21.46-.26.38-.3.31-.33.25-.35.19-.35.14-.33.1-.3.07-.26.04-.21.02H8.77l-.69.05-.59.14-.5.22-.41.27-.33.32-.27.35-.2.36-.15.37-.1.35-.07.32-.04.27-.02.21v3.06H3.17l-.21-.03-.28-.07-.32-.12-.35-.18-.36-.26-.36-.36-.35-.46-.32-.59-.28-.73-.21-.88-.14-1.05-.05-1.23.06-1.22.16-1.04.24-.87.32-.71.36-.57.4-.44.42-.33.42-.24.4-.16.36-.1.32-.05.24-.01h.16l.06.01h8.16v-.83H6.18l-.01-2.75-.02-.37.05-.34.11-.31.17-.28.25-.26.31-.23.38-.2.44-.18.51-.15.58-.12.64-.1.71-.06.77-.04.84-.02 1.27.05zm-6.3 1.98l-.23.33-.08.41.08.41.23.34.33.22.41.09.41-.09.33-.22.23-.34.08-.41-.08-.41-.23-.33-.33-.22-.41-.09-.41.09-.33.22zM21.1 6.11l.28.06.32.12.35.18.36.27.36.35.35.47.32.59.28.73.21.89.14 1.04.05 1.23-.06 1.23-.16 1.04-.24.86-.32.71-.36.57-.4.45-.42.33-.42.24-.4.16-.36.09-.32.05-.24.02-.16-.01h-8.22v.82h5.84l.01 2.76.02.36-.05.34-.11.31-.17.29-.25.25-.31.24-.38.2-.44.17-.51.15-.58.13-.64.09-.71.07-.77.04-.84.01-1.27-.04-1.07-.14-.9-.2-.73-.25-.59-.3-.45-.33-.34-.34-.25-.34-.16-.33-.1-.3-.04-.25-.02-.2.01-.13v-5.34l.05-.64.13-.54.21-.46.26-.38.3-.32.33-.24.35-.2.35-.14.33-.1.3-.06.26-.04.21-.02.13-.01h5.84l.69-.05.59-.14.5-.21.41-.28.33-.32.27-.35.2-.36.15-.36.1-.35.07-.32.04-.28.02-.21V6.07h2.09l.14.01.21.03zm-6.47 14.25l-.23.33-.08.41.08.41.23.33.33.23.41.08.41-.08.33-.23.23-.33.08-.41-.08-.41-.23-.33-.33-.23-.41-.08-.41.08-.33.23z"/></svg>
+          </div>
+          <h3>Python</h3>
+          <p data-i18n="skill.python">Data Science, Machine Learning, Flask, scripting, automation, data processing</p>
+          <div class="skill-bar"><div class="skill-fill" data-width="80"></div></div>
+        </div>
+
+        <div class="skill-card reveal">
+          <div class="skill-icon">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M0 0l11.955 24H24L12.045 0H0zm13.241 6.63l5.541 10.98H7.704l5.537-10.98z"/></svg>
+          </div>
+          <h3>Laravel / PHP</h3>
+          <p data-i18n="skill.laravel">MVC architecture, Blade templating, Eloquent ORM, session auth, Vite integration</p>
+          <div class="skill-bar"><div class="skill-fill" data-width="70"></div></div>
+        </div>
+
+        <div class="skill-card reveal">
+          <div class="skill-icon">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3.375 0C1.512 0 0 1.512 0 3.375v17.25C0 22.488 1.512 24 3.375 24h17.25C22.488 24 24 22.488 24 20.625V3.375C24 1.512 22.488 0 20.625 0H3.375zM12 3.75a8.25 8.25 0 1 1 0 16.5 8.25 8.25 0 0 1 0-16.5zm0 2.25a6 6 0 1 0 0 12 6 6 0 0 0 0-12z"/></svg>
+          </div>
+          <h3>Java</h3>
+          <p data-i18n="skill.java">Object-oriented programming, Android development, data structures & algorithms</p>
+          <div class="skill-bar"><div class="skill-fill" data-width="70"></div></div>
+        </div>
+
+        <div class="skill-card reveal">
+          <div class="skill-icon">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.807 18.285L13.553.756a1.324 1.324 0 00-1.129-.754 1.31 1.31 0 00-1.206.626l-8.952 17.7a1.332 1.332 0 001.043 1.924l17.112 1.674a1.332 1.332 0 001.386-1.641zM13.89 17.584l-4.835.473-.052-.003.036-1.335 1.1-3.666 3.24-.318.002.002.511 4.847zm.567-6.377l-3.86.378L13.476 4.1l.98 7.107z"/></svg>
+          </div>
+          <h3>MySQL / Supabase</h3>
+          <p data-i18n="skill.db">Database design, SQL queries, PostgreSQL, REST API, Supabase real-time features</p>
+          <div class="skill-bar"><div class="skill-fill" data-width="80"></div></div>
+        </div>
+
+        <div class="skill-card reveal">
+          <div class="skill-icon">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm0 2.16c5.43 0 9.84 4.41 9.84 9.84S17.43 21.84 12 21.84 2.16 17.43 2.16 12 6.57 2.16 12 2.16zM8.28 15.84l1.44-1.44L12 16.68l2.28-2.28 1.44 1.44L12 19.56l-3.72-3.72zm0-7.68L12 4.44l3.72 3.72-1.44 1.44L12 7.32 9.72 9.6 8.28 8.16z"/></svg>
+          </div>
+          <h3>Tools & Deployment</h3>
+          <p data-i18n="skill.tools">Git, GitHub, VS Code, Vercel, Render, Google Colab, Tableau, Microsoft Office</p>
+          <div class="skill-bar"><div class="skill-fill" data-width="85"></div></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <!-- ============ CONTACT ============ -->
+  <section class="section contact" id="contact">
+    <div class="container">
+      <h2 class="section-title reveal" data-i18n-html="contact.title">Get in <span>Touch</span></h2>
+      <p class="section-subtitle reveal" data-i18n="contact.sub">Let's connect and collaborate!</p>
+      <div class="contact-cards reveal">
+        <a href="mailto:ammar123tyo12@gmail.com" class="contact-card" target="_blank">
+          <div class="contact-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </div>
+          <h4>Email</h4>
+          <p>ammar123tyo12@gmail.com</p>
+        </a>
+        <a href="https://github.com/AmmarTyoPasaribu" class="contact-card" target="_blank" rel="noopener">
+          <div class="contact-card-icon">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+          </div>
+          <h4>GitHub</h4>
+          <p>AmmarTyoPasaribu</p>
+        </a>
+        <a href="https://www.linkedin.com/in/ammartyopasaribu" class="contact-card" target="_blank" rel="noopener">
+          <div class="contact-card-icon">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </div>
+          <h4>LinkedIn</h4>
+          <p>ammartyopasaribu</p>
+        </a>
+        <a href="https://instagram.com/ammartyo" class="contact-card" target="_blank" rel="noopener">
+          <div class="contact-card-icon">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+          </div>
+          <h4>Instagram</h4>
+          <p>@ammartyo</p>
+        </a>
+        <a href="tel:+6289562016363" class="contact-card">
+          <div class="contact-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          </div>
+          <h4>Phone</h4>
+          <p>+62 895-6201-63633</p>
+        </a>
+      </div>
+    </div>
+  </section>
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <a href="#" class="footer-logo">A<span>mmar</span></a>
+        <p data-i18n="footer.copy">&copy; 2026 Ammar Tyo Pasaribu. All rights reserved.</p>
+        <div class="footer-socials">
+          <a href="https://github.com/AmmarTyoPasaribu" target="_blank" rel="noopener" aria-label="GitHub" class="social-link">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+          </a>
+          <a href="https://linkedin.com/in/ammartyopasaribu" target="_blank" rel="noopener" aria-label="LinkedIn" class="social-link">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </a>
+          <a href="mailto:ammar123tyo12@gmail.com" aria-label="Email" class="social-link">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18 15 12 9 6 15"/></svg>
+  </button>
+
+
+  <!-- Cert Lightbox -->
+  <div class="cert-lightbox" id="certLightbox">
+    <button class="cert-lightbox-close" id="certLightboxClose">&times;</button>
+    <img id="certLightboxImg" src="" alt="Certificate" />
+  </div>
+
+  <script src="script.js"></script>
+  <script src="i18n.js"></script>
+</body>
+</html>

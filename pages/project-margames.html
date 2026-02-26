@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MaRgames &#x2014; Project Detail</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../style.css" /><link rel="stylesheet" href="../project-detail.css" />
+</head>
+<body>
+  <canvas id="particleCanvas"></canvas>
+  <nav class="detail-nav"><a href="../index.html#projects" class="back-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg data-i18n="detail.back">Back to Projects</a><span class="detail-nav-title">MaRgames</span>  <button class="lang-toggle" id="langToggle" aria-label="Toggle language">EN</button>
+  </nav>
+
+<section class="detail-hero"><div class="detail-content">
+    <h1>MaRgames &#x1F3AE;</h1>
+    <p class="detail-description" data-i18n-html="mg.desc">Koleksi 15 mini-game HTML5 modern dengan tampilan dark glassmorphism, built-in SFX, high score, dan PWA support &#x2014; bisa dimainkan langsung dari browser, offline-ready.</p>
+    <div class="detail-tech-row">
+      <span class="tech-front">HTML5</span><span class="tech-front">CSS3</span><span class="tech-front">JavaScript</span><span class="tech-other">Canvas API</span><span class="tech-other">Web Audio</span><span class="tech-other">PWA</span><span class="tech-other">Service Worker</span><span class="tech-other">Vercel</span>
+    </div>
+    <div class="detail-links">
+      <a href="https://margames.vercel.app/" target="_blank" data-i18n="btn.demo">Live Demo</a>
+      <a href="https://github.com/AmmarTyoPasaribu/MaRgames" target="_blank" data-i18n="btn.source">Source Code</a>
+    </div>
+    <div class="detail-divider"></div>
+  </div></section>
+
+  <section class="detail-section"><div class="detail-content">
+    <h2><span data-i18n-html="detail.features">&#x2728; <span>Features</span></span></h2>
+    <div class="features-grid">
+      <div class="feature-item"><span class="feature-icon">&#x2726;</span><div data-i18n-html="mg.f1"><strong>15 Mini-Games</strong> &#x2014; Beragam game dari puzzle, arcade, classic, hingga brain teaser</div></div>
+      <div class="feature-item"><span class="feature-icon">&#x2726;</span><div data-i18n-html="mg.f2"><strong>Dark Glassmorphism</strong> &#x2014; Desain modern dengan efek glass dan gradien gelap</div></div>
+      <div class="feature-item"><span class="feature-icon">&#x2726;</span><div data-i18n-html="mg.f3"><strong>High Score</strong> &#x2014; Simpan skor tertinggi secara lokal</div></div>
+      <div class="feature-item"><span class="feature-icon">&#x2726;</span><div data-i18n-html="mg.f4"><strong>Built-in SFX</strong> &#x2014; Efek suara interaktif di setiap game</div></div>
+      <div class="feature-item"><span class="feature-icon">&#x2726;</span><div data-i18n-html="mg.f5"><strong>PWA Support</strong> &#x2014; Install sebagai app di device, bisa dimainkan offline</div></div>
+      <div class="feature-item"><span class="feature-icon">&#x2726;</span><div data-i18n-html="mg.f6"><strong>Canvas-based</strong> &#x2014; Rendering game menggunakan HTML5 Canvas API</div></div>
+    </div>
+  </div></section>
+
+  <section class="detail-section"><div class="detail-content">
+    <h2><span data-i18n-html="detail.tech">&#x1F6E0; <span>Tech Stack</span></span></h2>
+    <table class="tech-table">
+      <tr><td>Frontend</td><td>HTML5, CSS3, JavaScript (Vanilla)</td></tr>
+      <tr><td>Graphics</td><td>Canvas API, CSS Animations</td></tr>
+      <tr><td>Audio</td><td>Web Audio API</td></tr>
+      <tr><td>PWA</td><td>Service Worker + Web App Manifest</td></tr>
+      <tr><td>Hosting</td><td>Vercel (Static Deploy)</td></tr>
+    </table>
+  </div></section>
+
+
+  <section class="detail-gallery-hero">
+    <div class="gallery-hero-inner">
+      <h2><span data-i18n-html="detail.screenshots">&#x1F4F8; <span>Screenshots</span></span></h2>
+      <div class="gallery-grid-hero">
+    <div class="gallery-item-hero" onclick="openLightbox(this)"><img src="../assets/screenshots/margames/main.png" alt="Screenshot" /></div>
+    <div class="gallery-item-hero" onclick="openLightbox(this)"><img src="../assets/screenshots/margames/ss1.png" alt="Screenshot" /></div>
+    <div class="gallery-item-hero" onclick="openLightbox(this)"><img src="../assets/screenshots/margames/ss2.png" alt="Screenshot" /></div>
+    <div class="gallery-item-hero" onclick="openLightbox(this)"><img src="../assets/screenshots/margames/ss3.png" alt="Screenshot" /></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="lightbox" id="lightbox" onclick="closeLightbox()"><button class="lightbox-close" onclick="closeLightbox()">&times;</button><img id="lightboxImg" src="" alt="Full screenshot" /></div>
+  <footer class="detail-footer"><p data-i18n="footer.copy">&copy; 2026 Ammar Tyo Pasaribu</p></footer>
+  <script src="../script.js"></script>
+  <script src="../i18n.js"></script>
+  <script>function openLightbox(el){document.getElementById('lightboxImg').src=el.querySelector('img').src;document.getElementById('lightbox').classList.add('active');}function closeLightbox(){document.getElementById('lightbox').classList.remove('active');}document.addEventListener('keydown',e=>{if(e.key==='Escape')closeLightbox();});</script>
+</body>
+</html>

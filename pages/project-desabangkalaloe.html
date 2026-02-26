@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Desa Bangkalaloe &#x2014; Project Detail</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../style.css" /><link rel="stylesheet" href="../project-detail.css" />
+</head>
+<body>
+  <canvas id="particleCanvas"></canvas>
+  <nav class="detail-nav"><a href="../index.html#projects" class="back-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg data-i18n="detail.back">Back to Projects</a><span class="detail-nav-title">Desa Bangkalaloe</span>  <button class="lang-toggle" id="langToggle" aria-label="Toggle language">EN</button>
+  </nav>
+
+<section class="detail-hero"><div class="detail-content">
+    <h1>Desa Bangkalaloe &#x1F3E1;</h1>
+    <p class="detail-description" data-i18n-html="db.desc">Website profil resmi Desa Bangkalaloe, Jeneponto untuk mendukung program KKN. Menampilkan profil desa, sejarah, data monografi, infografis peta, informasi UMKM, serta potensi desa.</p>
+    <div class="detail-tech-row">
+      <span class="tech-front">HTML</span><span class="tech-front">Tailwind CSS</span><span class="tech-front">CSS3</span><span class="tech-front">JavaScript</span><span class="tech-other">Google Maps API</span>
+    </div>
+    <div class="detail-links">
+      <a href="https://desabangkalaloe.vercel.app/" target="_blank" data-i18n="btn.demo">Live Demo</a>
+      <a href="https://github.com/AmmarTyoPasaribu/desabangkalaloe" target="_blank" data-i18n="btn.source">Source Code</a>
+    </div>
+    <div class="detail-divider"></div>
+  </div></section>
+
+  <section class="detail-section"><div class="detail-content">
+    <h2><span data-i18n-html="detail.features">&#x2728; <span>Features</span></span></h2>
+    <div class="features-grid">
+      <div class="feature-item"><span class="feature-icon">&#x2726;</span><div data-i18n-html="db.f1"><strong>Profil Desa</strong> &#x2014; Informasi lengkap tentang Desa Bangkalaloe, Jeneponto</div></div>
+      <div class="feature-item"><span class="feature-icon">&#x2726;</span><div data-i18n-html="db.f2"><strong>Sejarah Desa</strong> &#x2014; Sejarah terbentuknya desa dan perkembangannya</div></div>
+      <div class="feature-item"><span class="feature-icon">&#x2726;</span><div data-i18n-html="db.f3"><strong>Data Monografi</strong> &#x2014; Data kependudukan, demografis, dan statistik desa</div></div>
+      <div class="feature-item"><span class="feature-icon">&#x2726;</span><div data-i18n-html="db.f4"><strong>Peta Lokasi</strong> &#x2014; Integrasi Google Maps untuk menunjukkan lokasi desa</div></div>
+      <div class="feature-item"><span class="feature-icon">&#x2726;</span><div data-i18n-html="db.f5"><strong>UMKM</strong> &#x2014; Informasi usaha mikro, kecil, dan menengah di desa</div></div>
+      <div class="feature-item"><span class="feature-icon">&#x2726;</span><div data-i18n-html="db.f6"><strong>Modern UI</strong> &#x2014; Scroll animations, parallax, dan desain responsif</div></div>
+    </div>
+  </div></section>
+
+  <section class="detail-section"><div class="detail-content">
+    <h2><span data-i18n-html="detail.tech">&#x1F6E0; <span>Tech Stack</span></span></h2>
+    <table class="tech-table">
+      <tr><td>Frontend</td><td>HTML, Tailwind CSS, CSS3</td></tr>
+      <tr><td>Scripting</td><td>JavaScript (Vanilla)</td></tr>
+      <tr><td>Maps</td><td>Google Maps Embed API</td></tr>
+      <tr><td>Animations</td><td>Scroll-reveal, CSS transitions</td></tr>
+    </table>
+  </div></section>
+
+
+  <section class="detail-gallery-hero">
+    <div class="gallery-hero-inner">
+      <h2><span data-i18n-html="detail.screenshots">&#x1F4F8; <span>Screenshots</span></span></h2>
+      <div class="gallery-grid-hero">
+    <div class="gallery-item-hero" onclick="openLightbox(this)"><img src="../assets/screenshots/desabangkalaloe/main.png" alt="Screenshot" /></div>
+    <div class="gallery-item-hero" onclick="openLightbox(this)"><img src="../assets/screenshots/desabangkalaloe/ss1.png" alt="Screenshot" /></div>
+    <div class="gallery-item-hero" onclick="openLightbox(this)"><img src="../assets/screenshots/desabangkalaloe/ss2.png" alt="Screenshot" /></div>
+    <div class="gallery-item-hero" onclick="openLightbox(this)"><img src="../assets/screenshots/desabangkalaloe/ss3.png" alt="Screenshot" /></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="lightbox" id="lightbox" onclick="closeLightbox()"><button class="lightbox-close" onclick="closeLightbox()">&times;</button><img id="lightboxImg" src="" alt="Full screenshot" /></div>
+  <footer class="detail-footer"><p data-i18n="footer.copy">&copy; 2026 Ammar Tyo Pasaribu</p></footer>
+  <script src="../script.js"></script>
+  <script src="../i18n.js"></script>
+  <script>function openLightbox(el){document.getElementById('lightboxImg').src=el.querySelector('img').src;document.getElementById('lightbox').classList.add('active');}function closeLightbox(){document.getElementById('lightbox').classList.remove('active');}document.addEventListener('keydown',e=>{if(e.key==='Escape')closeLightbox();});</script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+AMMAR TYO PASARIBU 
++62895620163633 | ammar123tyo12@gmail.com | linkedin.com/in/ammartyopasaribu | 
+https://github.com/AmmarTyoPasaribu 
+Mahasiswa S1 Sistem Informasi Universitas Hasanuddin yang memiliki minat tinggi dalam Data 
+Science dan Pengembangan Website. Berpengalaman dalam pengolahan data, web & mobile development, 
+serta aktif dalam kegiatan organisasi dan kepanitiaan. Terbiasa menggunakan Python, Java, HTML, 
+PHP, dan MySQL, serta perangkat kerja seperti Microsoft Word, Excel, dan PowerPoint. Terbuka untuk 
+tantangan baru, kolaborasi tim, dan terus belajar hal-hal baru di bidang teknologi informasi. 
+PENDIDIKAN 
+Universitas Hasanuddin - Makassar, Indonesia 2022 - Sekarang 
+S1 Sistem Informasi, IPK : 3.93 / 4.00 
+ Penerima penghargaan beasiswa bakti BCA (Bank Central Asia) 
+ Relevant Coursework : Data science, Data mining, Machine learning, Deep learning, Pemrograman Web, Pemrograman Mobile 
+SMAN 1 Maros - Maros, Indonesia 2019 - 2022 
+Jurusan Ilmu Pengetahuan Alam, Score : 91.2 / 100.0 
+ Ketua Osis Sekbid Prestasi Akademik, Seni dan Olahraga 
+ Juara 1 KSN-K Maros Bidang Informatika 2019 oleh Kemdikbudristek 
+ Juara 1 KSN-K Maros Bidang Informatika 2020 oleh Kemdikbudristek 
+PENGALAMAN MAGANG 
+Kantor Otoritas Bandar Udara Wilayah V Makassar - Makassar, Indonesia 
+Magang bagian pelayanan pas bandara 
+ Mengelola perekaman dan input data hingga 40 pemohon pas bandara setiap hari 
+ Melayani pemohon pas bandara hingga 200 pemohon perminggu 
+ Mengelola persuratan dan data administrasi pemohon pas bandara 
+ Menyusun laporan mingguan monitoring pencetakan pas bandara secara terstruktur 
+ 
+PENGALAMAN ORGANISASI 
+Feb 2025 - Jul 2025 
+ 
+ 
+Badan Eksekutif Himatika FMIPA Unhas Oct 2024 - Jul 2025 
+Anggota Bidang Akademik dan Kemahasiswaan 
+ Menjadi Pemateri dalam kegiatan Himatika Talks:jalan kesuksesan melalui beasiswa 
+ Memberikan pengetahuan dan wawasan tentang pengembangan diri dan tujuan karir kepada mahasiswa Himatika FMIPA Unhas 
+ Mengelola database mahasiswa anggota Himatika FMIPA Unhas 
+ Memberikan pengetahuan dan bantuan akademik kepada mahasiswa dalam lingkup pembelajaran sistem informasi, matematika, dan 
+ilmu aktuaria 
+OSIS SMA Negeri 1 Maros 2020 - 2021 
+Ketua Sekbid Prestasi Akademik, Seni dan Olahraga 
+ Mendata dan merekap seluruh prestasi siswa baik akademik maupun non-akademik, dengan rata-rata 40 prestasi tiap bulan 
+ Menyusun laporan mingguan prestasi siswa dan membuat proposal penghargaan kepada sekolah untuk pemberian dana juara 
+ Mendata lebih dari 20 ekstrakurikuler dan mengelola laporan kegiatan mingguan dari masing-masing Pembina 
+ Mengoordinasikan pelaksanaan kegiatan akademik, seni, dan olahraga di sekolah, termasuk memimpin Pekan Olahraga dan Seni 2020 
+yang melibatkan 60 panitia dan 900 siswa peserta 
+Pekan Olahraga Dan Seni SMAN 1 Maros Dec 2020 
+Ketua Panitia 
+ Memimpin tim panitia yang terdiri dari 60 anggota untuk merencanakan, mengorganisir dan menyukseskan kegiatan pekan olahraga dan 
+seni SMAN 1 Maros 
+ Menyusun anggaran dan mengelola dana sebesar Rp 11 juta untuk kebutuhan kegiatan 
+ Menyusun jadwal & mengorganisasi 20+ kegiatan olahraga dan seni untuk 900 siswa 
+ACHIEVEMENTS 
+Penerima Penghargaan Beasiswa Bakti BCA (Bank Central Asia) 2024 - 2025 
+ Terpilih sebagai salah satu penerima Beasiswa Bakti BCA 2023 yang diselenggarakan oleh Bank Central Asia melalui seleksi Prestasi 
+akademik 
+ Mengikuti Transformational Workshop:developing self & building relationship 
+ Terlibat dalam program Business Impact Plan Competition untuk mengembangkan ide bisnis yang inovatif guna mendukung 
+pertumbuhan UMKM di Makassar. 
+2020 
+Juara 1 KSN-K Bidang Informatika 
+Meraih juara 1 kompetisi sains nasional tingkat kabupaten Maros yang diselenggarakan oleh Kementerian Pendidikan, Kebudayaan, 
+Riset, dan Teknologi (Kemdikbudristek) Tahun 2020 
+Juara 1 KSN-K Bidang Informatika 
+Meraih juara 1 kompetisi sains nasional tingkat kabupaten Maros yang diselenggarakan oleh Kementerian Pendidikan, Kebudayaan, 
+Riset, dan Teknologi (Kemdikbudristek) Tahun 2019 
+SKILLS 
+2019 
+Technical Skills : Python, Java, HTML, CSS, JavaScript, PHP, MySQL, React, Laravel, NextJs, ExpressJs, Flask, Tailwinds 
+Tools : Microsoft Word, Excel, PowerPoint, Google Colab, Tableau, Visual studio code 
+Soft Skills : Public Speaking, Critical Thinking, Teamwork, Problem Solving 
+Languages : Bahasa Indonesia (Native), English (Intermediate) 
+Project : 
+Website Pelaporan Perawat (SafeNurse) – Aplikasi pelaporan perawat menggunakan chatbot yang terintegrasi dengan AI 
+Website Profil Desa Bangkalaloe – Situs informasi desa untuk mendukung program KKN 
+Website Rental Mobil (MaRental) – Sistem informasi pemesanan dan manajemen data penyewaan mobil 
+Aplikasi E-Commerce (MaRket) – Aplikasi belanja mobile dengan fitur katalog dan checkout 
+Website Penjualan Sepatu (R&R) – Platform penjualan Sepatu berbasis machine learning untuk rekomendasi produk. 
+Website Reservasi Restoran (Vooked) – Sistem reservasi meja restoran secara online 
