@@ -169,6 +169,33 @@
       'db.f4': '<strong>Location Map</strong> — Google Maps integration to show village location',
       'db.f5': '<strong>UMKM</strong> — Information on micro, small, and medium enterprises in the village',
       'db.f6': '<strong>Modern UI</strong> — Scroll animations, parallax, and responsive design',
+
+      // MaRilmu Detail
+      'marilmu.desc': 'Complete digital Islamic portal with 25+ features to support daily worship. Includes Al-Quran with translations, automatic prayer schedule, digital tasbih, dzikir, prayer guide, audio murottal, and much more.',
+      'marilmu.f1': '<strong>Al-Quran</strong> — 114 surahs with Arabic text, Latin transliteration, and Indonesian translation',
+      'marilmu.f2': '<strong>Prayer Schedule</strong> — Automatic prayer times based on GPS location + countdown',
+      'marilmu.f3': '<strong>Digital Tasbih</strong> — Dhikr counter with 6 presets and daily tracking',
+      'marilmu.f4': '<strong>Audio Murottal</strong> — Listen to Al-Quran from 4 famous reciters',
+      'marilmu.f5': '<strong>Islamic Quiz</strong> — 15 Islamic trivia questions + score + answer explanations',
+      'marilmu.f6': '<strong>Zakat Calculator</strong> — Calculate income zakat, assets zakat, and fitrah zakat automatically',
+
+      // MaRticle Design Detail
+      'marticle.desc': 'Premium interactive particle system designer built with vanilla HTML, CSS, and JavaScript. Create stunning particle effects in real-time with an intuitive visual editor, multi-layer system, and 18 built-in presets.',
+      'marticle.f1': '<strong>18 Built-in Presets</strong> — Fire, Rain, Snow, Smoke, Sparkle, Explosion, Confetti, Galaxy, Aurora, and more',
+      'marticle.f2': '<strong>Multi-Layer System</strong> — Run multiple particle effects simultaneously on the same canvas',
+      'marticle.f3': '<strong>Mouse Interaction</strong> — Click and drag on canvas to emit particles at cursor position',
+      'marticle.f4': '<strong>Export Options</strong> — Export to JSON config, WebM recording, PNG frame, and copyable JS code',
+      'marticle.f5': '<strong>Undo/Redo</strong> — Full history with Ctrl+Z / Ctrl+Y support',
+      'marticle.f6': '<strong>Shareable Links</strong> — Encode configuration into a URL and share with others',
+
+      // QR Code MaR Detail
+      'qrcodemar.desc': 'Generate, customize, and download QR codes instantly — all client-side, no data sent to any server. Features 8 color presets, 4 dot styles, logo overlay, and history.',
+      'qrcodemar.f1': '<strong>Multiple Data Types</strong> — Support for URL, Text, WiFi, and Email',
+      'qrcodemar.f2': '<strong>8 Color Presets</strong> — Classic, Midnight, Ocean, Purple, Emerald, Rose, Gold Dark, Inverted',
+      'qrcodemar.f3': '<strong>Logo Overlay</strong> — Drag & drop logo with adjustable size, padding, and shape',
+      'qrcodemar.f4': '<strong>4 Dot Styles</strong> — Square, Rounded, Circle, and Diamond',
+      'qrcodemar.f5': '<strong>Export PNG/SVG</strong> — Download as PNG or SVG, plus copy to clipboard',
+      'qrcodemar.f6': '<strong>History</strong> — Last 8 QR codes saved locally',
     },
     id: {
       // ── HERO ──
@@ -335,6 +362,33 @@
       'db.f4': '<strong>Peta Lokasi</strong> — Integrasi Google Maps untuk menunjukkan lokasi desa',
       'db.f5': '<strong>UMKM</strong> — Informasi usaha mikro, kecil, dan menengah di desa',
       'db.f6': '<strong>Modern UI</strong> — Scroll animations, parallax, dan desain responsif',
+
+      // MaRilmu Detail
+      'marilmu.desc': 'Portal Islami digital lengkap dengan 25+ fitur untuk membantu ibadah sehari-hari. Dilengkapi Al-Quran dengan terjemahan, jadwal sholat otomatis, tasbih digital, dzikir, panduan sholat, audio murottal, dan masih banyak lagi.',
+      'marilmu.f1': '<strong>Al-Quran</strong> — 114 surah dengan teks Arab, transliterasi Latin, dan terjemahan Indonesia',
+      'marilmu.f2': '<strong>Jadwal Sholat</strong> — Waktu sholat otomatis berdasarkan lokasi GPS + countdown',
+      'marilmu.f3': '<strong>Tasbih Digital</strong> — Penghitung dzikir dengan 6 preset dan tracking harian',
+      'marilmu.f4': '<strong>Audio Murottal</strong> — Dengarkan Al-Quran dari 4 qari terkenal',
+      'marilmu.f5': '<strong>Quiz Islami</strong> — 15 soal trivia Islam + skor + penjelasan jawaban',
+      'marilmu.f6': '<strong>Kalkulator Zakat</strong> — Hitung zakat penghasilan, mal, dan fitrah secara otomatis',
+
+      // MaRticle Design Detail
+      'marticle.desc': 'Interactive particle system designer premium yang dibangun dengan vanilla HTML, CSS, dan JavaScript. Buat efek partikel stunning secara real-time dengan visual editor intuitif, multi-layer system, dan 18 preset bawaan.',
+      'marticle.f1': '<strong>18 Built-in Presets</strong> — Fire, Rain, Snow, Smoke, Sparkle, Explosion, Confetti, Galaxy, Aurora, dan lainnya',
+      'marticle.f2': '<strong>Multi-Layer System</strong> — Jalankan beberapa efek partikel secara bersamaan di satu canvas',
+      'marticle.f3': '<strong>Mouse Interaction</strong> — Klik dan drag di canvas untuk emit partikel di posisi kursor',
+      'marticle.f4': '<strong>Export Options</strong> — Export ke JSON config, WebM recording, PNG frame, dan copyable JS code',
+      'marticle.f5': '<strong>Undo/Redo</strong> — Full history dengan Ctrl+Z / Ctrl+Y support',
+      'marticle.f6': '<strong>Shareable Links</strong> — Encode konfigurasi ke URL dan bagikan ke orang lain',
+
+      // QR Code MaR Detail
+      'qrcodemar.desc': 'Generate, customize, dan download QR code secara instan — semuanya berjalan di sisi client, tidak ada data yang dikirim ke server manapun. Dilengkapi 8 color presets, 4 dot styles, logo overlay, dan history.',
+      'qrcodemar.f1': '<strong>Multiple Data Types</strong> — Support URL, Text, WiFi, dan Email',
+      'qrcodemar.f2': '<strong>8 Color Presets</strong> — Classic, Midnight, Ocean, Purple, Emerald, Rose, Gold Dark, Inverted',
+      'qrcodemar.f3': '<strong>Logo Overlay</strong> — Drag & drop logo dengan size, padding, dan shape yang bisa diatur',
+      'qrcodemar.f4': '<strong>4 Dot Styles</strong> — Square, Rounded, Circle, dan Diamond',
+      'qrcodemar.f5': '<strong>Export PNG/SVG</strong> — Download sebagai PNG atau SVG, plus copy ke clipboard',
+      'qrcodemar.f6': '<strong>History</strong> — 8 QR code terakhir tersimpan secara lokal',
     }
   };
 

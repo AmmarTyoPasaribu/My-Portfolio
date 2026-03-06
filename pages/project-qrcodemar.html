@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>QR Code MaR &#x2014; Project Detail</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="../project-detail.css" />
+</head>
+<body>
+  <canvas id="particleCanvas"></canvas>
+
+  <nav class="detail-nav">
+    <a href="../index.html#projects" class="back-link">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+      <span data-i18n="detail.back">Back to Projects</span>
+    </a>
+    <span class="detail-nav-title">QR Code MaR</span>
+    <button class="lang-toggle" id="langToggle" aria-label="Toggle language">EN</button>
+  </nav>
+
+  <!-- Project Info -->
+  <section class="detail-hero">
+    <div class="detail-content">
+      <h1>QR Code MaR &#x1F4F1;</h1>
+      <p class="detail-description" data-i18n-html="qrcodemar.desc">Generate, customize, dan download QR code secara instan — semuanya berjalan di sisi client, tidak ada data yang dikirim ke server manapun. Dilengkapi 8 color presets, 4 dot styles, logo overlay, dan history.</p>
+      <div class="detail-tech-row">
+        <span class="tech-front">HTML5</span><span class="tech-front">CSS3</span><span class="tech-front">JavaScript</span>
+        <span class="tech-other">Canvas API</span><span class="tech-other">qrcode-generator</span><span class="tech-other">Vercel</span>
+      </div>
+      <div class="detail-links">
+        <a href="https://qrcodemar.vercel.app/" target="_blank" data-i18n="btn.demo">Live Demo</a>
+        <a href="https://github.com/AmmarTyoPasaribu/QRcode-MaR" target="_blank" data-i18n="btn.source">Source Code</a>
+      </div>
+      <div class="detail-divider"></div>
+    </div>
+  </section>
+
+  <section class="detail-section">
+    <div class="detail-content">
+      <h2><span data-i18n-html="detail.features">&#x2728; <span>Features</span></span></h2>
+      <div class="features-grid">
+        <div class="feature-item"><span class="feature-icon">&#x2726;</span><div data-i18n-html="qrcodemar.f1"><strong>Multiple Data Types</strong> &#x2014; Support URL, Text, WiFi, dan Email</div></div>
+        <div class="feature-item"><span class="feature-icon">&#x2726;</span><div data-i18n-html="qrcodemar.f2"><strong>8 Color Presets</strong> &#x2014; Classic, Midnight, Ocean, Purple, Emerald, Rose, Gold Dark, Inverted</div></div>
+        <div class="feature-item"><span class="feature-icon">&#x2726;</span><div data-i18n-html="qrcodemar.f3"><strong>Logo Overlay</strong> &#x2014; Drag & drop logo dengan size, padding, dan shape yang bisa diatur</div></div>
+        <div class="feature-item"><span class="feature-icon">&#x2726;</span><div data-i18n-html="qrcodemar.f4"><strong>4 Dot Styles</strong> &#x2014; Square, Rounded, Circle, dan Diamond</div></div>
+        <div class="feature-item"><span class="feature-icon">&#x2726;</span><div data-i18n-html="qrcodemar.f5"><strong>Export PNG/SVG</strong> &#x2014; Download sebagai PNG atau SVG, plus copy ke clipboard</div></div>
+        <div class="feature-item"><span class="feature-icon">&#x2726;</span><div data-i18n-html="qrcodemar.f6"><strong>History</strong> &#x2014; 8 QR code terakhir tersimpan secara lokal</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="detail-section">
+    <div class="detail-content">
+      <h2><span data-i18n-html="detail.tech">&#x1F6E0; <span>Tech Stack</span></span></h2>
+      <table class="tech-table">
+        <tr><td>Core</td><td>HTML5, CSS3, Vanilla JavaScript</td></tr>
+        <tr><td>Rendering</td><td>Canvas API</td></tr>
+        <tr><td>Styling</td><td>Custom Dark Mode, Glassmorphism</td></tr>
+        <tr><td>QR Library</td><td>qrcode-generator (CDN)</td></tr>
+        <tr><td>Background</td><td>Animated Starfield (Canvas)</td></tr>
+        <tr><td>Hosting</td><td>Vercel</td></tr>
+      </table>
+    </div>
+  </section>
+
+  <section class="detail-gallery-hero">
+    <div class="gallery-hero-inner">
+      <h2><span data-i18n-html="detail.screenshots">&#x1F4F8; <span>Screenshots</span></span></h2>
+      <div class="gallery-grid-hero">
+        <div class="gallery-item-hero" onclick="openLightbox(this)"><img src="../assets/screenshots/qrcodemar/main.png" alt="QR Code MaR &#x2014; Main" /></div>
+        <div class="gallery-item-hero" onclick="openLightbox(this)"><img src="../assets/screenshots/qrcodemar/Screenshot 2026-03-06 204235.png" alt="Screenshot 1" /></div>
+        <div class="gallery-item-hero" onclick="openLightbox(this)"><img src="../assets/screenshots/qrcodemar/Screenshot 2026-03-06 204319.png" alt="Screenshot 2" /></div>
+        <div class="gallery-item-hero" onclick="openLightbox(this)"><img src="../assets/screenshots/qrcodemar/Screenshot 2026-03-06 204354.png" alt="Screenshot 3" /></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+    <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+    <img id="lightboxImg" src="" alt="Full screenshot" />
+  </div>
+  <footer class="detail-footer"><p data-i18n="footer.copy">&copy; 2026 Ammar Tyo Pasaribu</p></footer>
+  <script src="../script.js"></script>
+  <script src="../i18n.js"></script>
+  <script>
+    function openLightbox(el){document.getElementById('lightboxImg').src=el.querySelector('img').src;document.getElementById('lightbox').classList.add('active');}
+    function closeLightbox(){document.getElementById('lightbox').classList.remove('active');}
+    document.addEventListener('keydown',e=>{if(e.key==='Escape')closeLightbox();});
+  </script>
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MaRilmu &#x2014; Project Detail</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="../project-detail.css" />
+</head>
+<body>
+  <canvas id="particleCanvas"></canvas>
+
+  <nav class="detail-nav">
+    <a href="../index.html#projects" class="back-link">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+      <span data-i18n="detail.back">Back to Projects</span>
+    </a>
+    <span class="detail-nav-title">MaRilmu</span>
+    <button class="lang-toggle" id="langToggle" aria-label="Toggle language">EN</button>
+  </nav>
+
+  <!-- Project Info -->
+  <section class="detail-hero">
+    <div class="detail-content">
+      <h1>MaRilmu &#x1F319;</h1>
+      <p class="detail-description" data-i18n-html="marilmu.desc">Portal Islami digital lengkap dengan 25+ fitur untuk membantu ibadah sehari-hari. Dilengkapi Al-Quran dengan terjemahan, jadwal sholat otomatis, tasbih digital, dzikir, panduan sholat, audio murottal, dan masih banyak lagi.</p>
+      <div class="detail-tech-row">
+        <span class="tech-front">Next.js</span><span class="tech-front">TypeScript</span><span class="tech-front">CSS</span>
+        <span class="tech-other">Al-Quran Cloud API</span><span class="tech-other">Aladhan API</span><span class="tech-other">localStorage</span><span class="tech-other">Vercel</span>
+      </div>
+      <div class="detail-links">
+        <a href="https://marilmu.vercel.app/" target="_blank" data-i18n="btn.demo">Live Demo</a>
+        <a href="https://github.com/AmmarTyoPasaribu/MaRilmu" target="_blank" data-i18n="btn.source">Source Code</a>
+      </div>
+      <div class="detail-divider"></div>
+    </div>
+  </section>
+
+  <section class="detail-section">
+    <div class="detail-content">
+      <h2><span data-i18n-html="detail.features">&#x2728; <span>Features</span></span></h2>
+      <div class="features-grid">
+        <div class="feature-item"><span class="feature-icon">&#x2726;</span><div data-i18n-html="marilmu.f1"><strong>Al-Quran</strong> &#x2014; 114 surah dengan teks Arab, transliterasi Latin, dan terjemahan Indonesia</div></div>
+        <div class="feature-item"><span class="feature-icon">&#x2726;</span><div data-i18n-html="marilmu.f2"><strong>Jadwal Sholat</strong> &#x2014; Waktu sholat otomatis berdasarkan lokasi GPS + countdown</div></div>
+        <div class="feature-item"><span class="feature-icon">&#x2726;</span><div data-i18n-html="marilmu.f3"><strong>Tasbih Digital</strong> &#x2014; Penghitung dzikir dengan 6 preset dan tracking harian</div></div>
+        <div class="feature-item"><span class="feature-icon">&#x2726;</span><div data-i18n-html="marilmu.f4"><strong>Audio Murottal</strong> &#x2014; Dengarkan Al-Quran dari 4 qari terkenal</div></div>
+        <div class="feature-item"><span class="feature-icon">&#x2726;</span><div data-i18n-html="marilmu.f5"><strong>Quiz Islami</strong> &#x2014; 15 soal trivia Islam + skor + penjelasan jawaban</div></div>
+        <div class="feature-item"><span class="feature-icon">&#x2726;</span><div data-i18n-html="marilmu.f6"><strong>Kalkulator Zakat</strong> &#x2014; Hitung zakat penghasilan, mal, dan fitrah secara otomatis</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="detail-section">
+    <div class="detail-content">
+      <h2><span data-i18n-html="detail.tech">&#x1F6E0; <span>Tech Stack</span></span></h2>
+      <table class="tech-table">
+        <tr><td>Framework</td><td>Next.js 16 (App Router)</td></tr>
+        <tr><td>Language</td><td>TypeScript</td></tr>
+        <tr><td>Styling</td><td>Vanilla CSS (Custom Design System)</td></tr>
+        <tr><td>Font</td><td>Google Fonts (Poppins, Amiri)</td></tr>
+        <tr><td>API</td><td>Al-Quran Cloud API, Aladhan API</td></tr>
+        <tr><td>Storage</td><td>localStorage</td></tr>
+        <tr><td>Hosting</td><td>Vercel</td></tr>
+      </table>
+    </div>
+  </section>
+
+  <section class="detail-gallery-hero">
+    <div class="gallery-hero-inner">
+      <h2><span data-i18n-html="detail.screenshots">&#x1F4F8; <span>Screenshots</span></span></h2>
+      <div class="gallery-grid-hero">
+        <div class="gallery-item-hero" onclick="openLightbox(this)"><img src="../assets/screenshots/marilmu/main.png" alt="MaRilmu &#x2014; Main" /></div>
+        <div class="gallery-item-hero" onclick="openLightbox(this)"><img src="../assets/screenshots/marilmu/Screenshot 2026-03-06 203845.png" alt="Screenshot 1" /></div>
+        <div class="gallery-item-hero" onclick="openLightbox(this)"><img src="../assets/screenshots/marilmu/Screenshot 2026-03-06 203911.png" alt="Screenshot 2" /></div>
+        <div class="gallery-item-hero" onclick="openLightbox(this)"><img src="../assets/screenshots/marilmu/Screenshot 2026-03-06 204216.png" alt="Screenshot 3" /></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+    <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+    <img id="lightboxImg" src="" alt="Full screenshot" />
+  </div>
+  <footer class="detail-footer"><p data-i18n="footer.copy">&copy; 2026 Ammar Tyo Pasaribu</p></footer>
+  <script src="../script.js"></script>
+  <script src="../i18n.js"></script>
+  <script>
+    function openLightbox(el){document.getElementById('lightboxImg').src=el.querySelector('img').src;document.getElementById('lightbox').classList.add('active');}
+    function closeLightbox(){document.getElementById('lightbox').classList.remove('active');}
+    document.addEventListener('keydown',e=>{if(e.key==='Escape')closeLightbox();});
+  </script>
+</body>
+</html>
