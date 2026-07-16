@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Absensi Lab &#x2014; Project Detail</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="../project-detail.css" />
+</head>
+<body>
+  <canvas id="particleCanvas"></canvas>
+
+  <nav class="detail-nav">
+    <a href="../index.html#projects" class="back-link">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+      <span data-i18n="detail.back">Back to Projects</span>
+    </a>
+    <span class="detail-nav-title">Absensi Lab</span>
+    <button class="lang-toggle" id="langToggle" aria-label="Toggle language">EN</button>
+  </nav>
+
+  <!-- Project Info -->
+  <section class="detail-hero">
+    <div class="detail-content">
+      <h1>Absensi Lab &#x1F393;</h1>
+      <p class="detail-description" data-i18n-html="fa.desc">Sistem absensi laboratorium berbasis web menggunakan face recognition. Admin membuat sesi kelas dengan foto rombongan, dan sistem otomatis mendeteksi setiap wajah, mencocokkannya dengan roster mahasiswa terdaftar, lalu mencatat kehadiran &#x2014; dengan review manual untuk wajah yang belum terkenali.</p>
+      <div class="detail-tech-row">
+        <span class="tech-front">Next.js</span><span class="tech-front">React</span><span class="tech-front">TypeScript</span><span class="tech-front">Tailwind CSS</span>
+        <span class="tech-back">FastAPI</span><span class="tech-back">PyTorch</span><span class="tech-db">Supabase (pgvector)</span><span class="tech-ai">Face Recognition</span><span class="tech-other">Cloudinary</span>
+      </div>
+      <div class="detail-links">
+        <a href="project-faceattendance-maintenance.html" data-i18n="btn.demo">Live Demo</a>
+        <a href="https://github.com/AmmarTyoPasaribu/skripsi-website-absensi-face-recognition" target="_blank" data-i18n="btn.source">Source Code</a>
+      </div>
+      <div class="detail-divider"></div>
+    </div>
+  </section>
+
+  <section class="detail-section">
+    <div class="detail-content">
+      <h2><span data-i18n-html="detail.features">&#x2728; <span>Features</span></span></h2>
+      <div class="features-grid">
+        <div class="feature-item"><span class="feature-icon">&#x2726;</span><div data-i18n-html="fa.f1"><strong>Registrasi Mahasiswa</strong> &#x2014; Upload foto mahasiswa, ekstrak embedding wajah, dan auto-enroll ke kelasnya</div></div>
+        <div class="feature-item"><span class="feature-icon">&#x2726;</span><div data-i18n-html="fa.f2"><strong>Pembuatan Sesi</strong> &#x2014; Upload foto kelas untuk deteksi multi-wajah otomatis dan pencocokan roster</div></div>
+        <div class="feature-item"><span class="feature-icon">&#x2726;</span><div data-i18n-html="fa.f3"><strong>Review Manual</strong> &#x2014; Ubah status kehadiran (hadir/absen/sakit) dan tautkan wajah belum dikenali ke mahasiswa</div></div>
+        <div class="feature-item"><span class="feature-icon">&#x2726;</span><div data-i18n-html="fa.f4"><strong>Dashboard Absensi</strong> &#x2014; Statistik real-time total mahasiswa, kelas, dan sesi</div></div>
+        <div class="feature-item"><span class="feature-icon">&#x2726;</span><div data-i18n-html="fa.f5"><strong>Filter, Pencarian &amp; Export</strong> &#x2014; Filter sesi berdasarkan mata kuliah, kelas, atau tanggal, dan export kehadiran ke CSV</div></div>
+        <div class="feature-item"><span class="feature-icon">&#x2726;</span><div data-i18n-html="fa.f6"><strong>Akses Berbasis Role</strong> &#x2014; Sistem login dengan manajemen admin dan user</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="detail-section">
+    <div class="detail-content">
+      <h2><span data-i18n-html="detail.tech">&#x1F6E0; <span>Tech Stack</span></span></h2>
+      <table class="tech-table">
+        <tr><td>Frontend</td><td>Next.js, React, TypeScript, Tailwind CSS</td></tr>
+        <tr><td>Backend</td><td>FastAPI (Python)</td></tr>
+        <tr><td>Face Recognition</td><td>MTCNN (detection) + InceptionResnetV1 / FaceNet (512-d embeddings), cosine similarity matching</td></tr>
+        <tr><td>Database</td><td>Supabase (PostgreSQL + pgvector)</td></tr>
+        <tr><td>Media</td><td>Cloudinary</td></tr>
+        <tr><td>Auth</td><td>JWT + bcrypt</td></tr>
+      </table>
+    </div>
+  </section>
+
+  <section class="detail-gallery-hero">
+    <div class="gallery-hero-inner">
+      <h2><span data-i18n-html="detail.screenshots">&#x1F4F8; <span>Screenshots</span></span></h2>
+      <div class="gallery-grid-hero">
+        <div class="gallery-item-hero" onclick="openLightbox(this)"><img src="../assets/screenshots/faceattendance/main.png" alt="Absensi Lab &#x2014; Face Recognition Result" /></div>
+        <div class="gallery-item-hero" onclick="openLightbox(this)"><img src="../assets/screenshots/faceattendance/ss1.png" alt="Screenshot 1" /></div>
+        <div class="gallery-item-hero" onclick="openLightbox(this)"><img src="../assets/screenshots/faceattendance/ss2.png" alt="Screenshot 2" /></div>
+        <div class="gallery-item-hero" onclick="openLightbox(this)"><img src="../assets/screenshots/faceattendance/ss3.png" alt="Screenshot 3" /></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+    <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+    <img id="lightboxImg" src="" alt="Full screenshot" />
+  </div>
+  <footer class="detail-footer"><p data-i18n="footer.copy">&copy; 2026 Ammar Tyo Pasaribu</p></footer>
+  <script src="../script.js"></script>
+  <script src="../i18n.js"></script>
+  <script>
+    function openLightbox(el){document.getElementById('lightboxImg').src=el.querySelector('img').src;document.getElementById('lightbox').classList.add('active');}
+    function closeLightbox(){document.getElementById('lightbox').classList.remove('active');}
+    document.addEventListener('keydown',e=>{if(e.key==='Escape')closeLightbox();});
+  </script>
+</body>
+</html>

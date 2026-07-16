@@ -30,6 +30,8 @@
       // ── EXPERIENCE ──
       'exp.title': 'My <span>Experience</span>',
       'exp.sub': 'Internship & organizational activities',
+      'exp.silab.role': 'Laboratory Teaching Assistant — Mobile Programming',
+      'exp.silab.desc': 'Taught and guided 80+ students in the Mobile Programming practicum. Managed grading and evaluation of practicum results, prepared practicum materials and modules, and assisted students with their practicum assignments.',
       'exp.intern.role': 'Internship — Airport Pass Service Division',
       'exp.intern.desc': 'Managed recording and data input for up to 40 applicants/day. Served up to 200 applicants/week. Handled correspondence and administration, and compiled weekly reports for airport pass printing monitoring.',
       'exp.himatika.role': 'Member of Academic & Student Affairs Division',
@@ -64,6 +66,7 @@
       'proj.shoestore.desc': 'Full-stack shoe e-commerce with NMF machine learning-based AI recommendation system and complete admin panel.',
       'proj.marental.desc': 'Full-stack online car rental system with auto booking, driver management, admin dashboard, and payment proof upload.',
       'proj.marnime.desc': 'Modern anime website with Aurora Dark theme. Explore, track watchlist, and manage your anime list with AniList data.',
+      'proj.faceattendance.desc': 'Laboratory attendance system based on face recognition, with automatic multi-face detection, per-class student roster, and a complete admin dashboard.',
       'proj.margames.desc': '15 modern HTML5 mini-games with dark glassmorphism, SFX, high score, and PWA support — playable offline.',
       'proj.interview.desc': 'Web-based candidate interview scoring app. Create question templates, real-time scoring, and automatic ranking leaderboard.',
       'proj.grabmar.desc': 'Daily earnings calculator for Grab drivers. Calculate digital & cash money, save history with login, and view detailed breakdown.',
@@ -133,6 +136,19 @@
       'mn.f4': '<strong>Watchlist</strong> — Add anime to watch list (Planning, Watching, Completed)',
       'mn.f5': '<strong>Authentication</strong> — Register and login with email & password via Supabase',
       'mn.f6': '<strong>Multilingual</strong> — Toggle English / Indonesian language',
+
+      'fa.desc': 'Web-based laboratory attendance system using face recognition. Admins create a class session with a group photo, and the system automatically detects every face, matches it against the enrolled student roster, and records attendance — with manual review for unmatched faces.',
+      'fa.f1': '<strong>Student Registration</strong> — Upload a student photo, extract a face embedding, and auto-enroll into their class',
+      'fa.f2': '<strong>Session Creation</strong> — Upload a classroom photo for automatic multi-face detection and roster matching',
+      'fa.f3': '<strong>Manual Review</strong> — Correct attendance status (present/absent/sick) and link unmatched faces to students',
+      'fa.f4': '<strong>Attendance Dashboard</strong> — Real-time stats for total students, classes, and sessions',
+      'fa.f5': '<strong>Filter, Search &amp; Export</strong> — Filter sessions by course, class, or date, and export attendance to CSV',
+      'fa.f6': '<strong>Role-Based Access</strong> — Login system with admin and user management',
+
+      'maint.title': 'Live Demo Under Maintenance',
+      'maint.desc': 'The live demo for this project is temporarily unavailable while it is being prepared for deployment. In the meantime, feel free to check the full source code on GitHub.',
+      'maint.back': 'Back to Portfolio',
+      'maint.source': 'View Source Code',
 
       // MaRgames Detail
       'mg.desc': 'Collection of 15 modern HTML5 mini-games with dark glassmorphism UI, built-in SFX, high score, and PWA support — playable directly from the browser, offline-ready.',
@@ -223,6 +239,8 @@
       // ── EXPERIENCE ──
       'exp.title': '<span>Pengalaman</span> Saya',
       'exp.sub': 'Magang & kegiatan organisasi',
+      'exp.silab.role': 'Asisten Laboratorium Mata Kuliah Pemrograman Mobile',
+      'exp.silab.desc': 'Mengajar dan mendampingi lebih dari 80 praktikan pada praktikum Pemrograman Mobile. Mengelola pengolahan nilai dan hasil praktikum, menyusun materi dan modul praktikum, serta mendampingi pengerjaan tugas praktikan.',
       'exp.intern.role': 'Magang — Bagian Pelayanan Pas Bandara',
       'exp.intern.desc': 'Mengelola perekaman dan input data hingga 40 pemohon/hari. Melayani hingga 200 pemohon/minggu. Mengelola persuratan dan administrasi, serta menyusun laporan mingguan monitoring pencetakan pas bandara secara terstruktur.',
       'exp.himatika.role': 'Anggota Bidang Akademik dan Kemahasiswaan',
@@ -257,6 +275,7 @@
       'proj.shoestore.desc': 'E-commerce sepatu full-stack dengan sistem rekomendasi AI berbasis NMF machine learning dan panel admin lengkap.',
       'proj.marental.desc': 'Sistem rental mobil online full stack dengan booking otomatis, manajemen driver, admin dashboard, dan upload bukti pembayaran.',
       'proj.marnime.desc': 'Website anime modern dengan tema Aurora Dark. Jelajahi, lacak watchlist, dan kelola daftar anime kamu dengan data dari AniList.',
+      'proj.faceattendance.desc': 'Sistem absensi laboratorium berbasis face recognition dengan deteksi multi-wajah otomatis, roster mahasiswa per kelas, dan dashboard admin lengkap.',
       'proj.margames.desc': 'Koleksi 15 mini-game HTML5 modern dengan dark glassmorphism, SFX, high score, dan PWA support — playable offline.',
       'proj.interview.desc': 'Aplikasi penilaian interview kandidat berbasis web. Buat template pertanyaan, scoring real-time, dan leaderboard ranking otomatis.',
       'proj.grabmar.desc': 'Kalkulator pendapatan harian driver Grab. Hitung uang digital & cash, simpan riwayat dengan login, dan lihat detail breakdown.',
@@ -326,6 +345,19 @@
       'mn.f4': '<strong>Watchlist</strong> — Tambah anime ke daftar tontonan (Planning, Watching, Completed)',
       'mn.f5': '<strong>Autentikasi</strong> — Daftar dan masuk dengan email & password via Supabase',
       'mn.f6': '<strong>Multibahasa</strong> — Toggle bahasa English / Indonesia',
+
+      'fa.desc': 'Sistem absensi laboratorium berbasis web menggunakan face recognition. Admin membuat sesi kelas dengan foto rombongan, dan sistem otomatis mendeteksi setiap wajah, mencocokkannya dengan roster mahasiswa terdaftar, lalu mencatat kehadiran — dengan review manual untuk wajah yang belum terkenali.',
+      'fa.f1': '<strong>Registrasi Mahasiswa</strong> — Upload foto mahasiswa, ekstrak embedding wajah, dan auto-enroll ke kelasnya',
+      'fa.f2': '<strong>Pembuatan Sesi</strong> — Upload foto kelas untuk deteksi multi-wajah otomatis dan pencocokan roster',
+      'fa.f3': '<strong>Review Manual</strong> — Ubah status kehadiran (hadir/absen/sakit) dan tautkan wajah belum dikenali ke mahasiswa',
+      'fa.f4': '<strong>Dashboard Absensi</strong> — Statistik real-time total mahasiswa, kelas, dan sesi',
+      'fa.f5': '<strong>Filter, Pencarian &amp; Export</strong> — Filter sesi berdasarkan mata kuliah, kelas, atau tanggal, dan export kehadiran ke CSV',
+      'fa.f6': '<strong>Akses Berbasis Role</strong> — Sistem login dengan manajemen admin dan user',
+
+      'maint.title': 'Live Demo Sedang Maintenance',
+      'maint.desc': 'Live demo untuk proyek ini untuk sementara belum tersedia karena masih dalam tahap persiapan deployment. Sambil menunggu, kamu bisa cek source code lengkapnya di GitHub.',
+      'maint.back': 'Kembali ke Portfolio',
+      'maint.source': 'Lihat Source Code',
 
       // MaRgames Detail
       'mg.desc': 'Koleksi 15 mini-game HTML5 modern dengan tampilan dark glassmorphism, built-in SFX, high score, dan PWA support — bisa dimainkan langsung dari browser, offline-ready.',
