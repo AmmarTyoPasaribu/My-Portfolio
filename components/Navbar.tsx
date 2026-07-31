@@ -39,7 +39,7 @@ export function Navbar() {
       }`}
     >
       <a href="#" className="font-mono text-[1.1rem] text-text-muted">
-        &lt;<span className="font-semibold text-accent">Portfolio</span> /&gt;
+        &lt;<span className="font-semibold text-accent">Ammar</span> /&gt;
       </a>
 
       <button

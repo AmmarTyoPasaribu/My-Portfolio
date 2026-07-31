@@ -2,7 +2,7 @@ import type { en } from './en';
 
 export const id: Record<keyof typeof en, string> = {
   // ── HERO ──
-  'hero.greeting': 'PENGEMBANG FULL STACK — MAKASSAR, ID',
+  'hero.greeting': 'FULL STACK DEVELOPER — MAKASSAR, ID',
   'cert.view': 'Lihat Sertifikat',
   'hero.tagline': 'Saya seorang ',
   'hero.desc':
@@ -13,7 +13,7 @@ export const id: Record<keyof typeof en, string> = {
   // ── ABOUT ──
   'about.title': 'Tentang <span>Saya</span>',
   'about.p1':
-    'Lulusan S1 Sistem Informasi Universitas Hasanuddin dengan fondasi kuat di pengembangan web full-stack serta passion yang terus berkembang di bidang AI dan Data Science. Menguasai Python (Flask), JavaScript, Node.js, Express.js, React.js/Next.js, Laravel, dan SQL — selalu semangat belajar, membangun, dan mengubah ide kompleks menjadi solusi yang rapi dan bekerja.',
+    'Fresh Graduate S1 Sistem Informasi Universitas Hasanuddin (IPK 3.93/4.00) dengan fokus pada Full Stack Web Development yang terintegrasi dengan Artificial Intelligence (Machine Learning, Deep Learning), serta pengolahan data (Data Analysis, Data Science). Berpengalaman membangun aplikasi web end-to-end menggunakan React/Next.js, Node.js/Express, Laravel, dan Python. Aktif dalam organisasi kemahasiswaan dan kepanitiaan, terbuka untuk berbagai peluang karir di bidang teknologi informasi dengan semangat kolaborasi tim dan pembelajaran berkelanjutan.',
   'about.skill': 'Keahlian & Minat',
   'about.cv': 'Unduh CV',
 

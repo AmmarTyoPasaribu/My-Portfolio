@@ -11,7 +11,6 @@ import { IconGithub, IconLinkedin, IconEmailFill, IconPhoneFill } from '@/lib/ic
 import ClickSpark from './ClickSpark';
 import StarBorder from './StarBorder';
 import DecryptedText from './DecryptedText';
-
 const iconMap = { github: IconGithub, linkedin: IconLinkedin, email: IconEmailFill, phone: IconPhoneFill };
 
 export function Hero() {
@@ -56,13 +55,18 @@ export function Hero() {
                 {t('hero.cta1')}
               </StarBorder>
             </ClickSpark>
-            <a
-              href="/assets/docs/CV_Ammar_Tyo_Pasaribu.pdf"
-              target="_blank"
-              className="inline-flex items-center gap-2 rounded-sm border border-border px-8 py-3.5 text-[0.95rem] font-semibold text-text-primary transition-all hover:border-accent hover:text-accent"
-            >
-              {t('about.cv')}
-            </a>
+            <ClickSpark sparkColor="#a1a1aa" sparkCount={10} sparkRadius={20} duration={500}>
+              <StarBorder 
+                as="a" 
+                href="/assets/docs/CV_Ammar_Tyo_Pasaribu.pdf" 
+                target="_blank" 
+                color="#52525b" 
+                speed="6s"
+                innerClassName="bg-bg text-text-primary hover:text-accent transition-colors"
+              >
+                {t('about.cv')}
+              </StarBorder>
+            </ClickSpark>
           </div>
 
           <div className="flex gap-3 max-md:justify-center">
@@ -98,7 +102,7 @@ export function Hero() {
               />
             </div>
             <span className="absolute -left-3.5 bottom-2 z-[2] whitespace-nowrap border border-border bg-bg px-3 py-1.5 font-mono text-[0.68rem] tracking-wide text-accent max-md:left-1/2 max-md:-translate-x-1/2">
-              IMG_01 // PORTOFOLIO
+              Ammar // PORTOFOLIO
             </span>
           </div>
         </div>

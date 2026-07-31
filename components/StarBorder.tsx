@@ -5,6 +5,7 @@ type StarBorderProps<T extends React.ElementType> = React.ComponentPropsWithoutR
   as?: T;
   className?: string;
   children?: React.ReactNode;
+  innerClassName?: string;
   color?: string;
   speed?: React.CSSProperties['animationDuration'];
   thickness?: number;
@@ -13,6 +14,7 @@ type StarBorderProps<T extends React.ElementType> = React.ComponentPropsWithoutR
 const StarBorder = <T extends React.ElementType = 'button'>({
   as,
   className = '',
+  innerClassName = '',
   color = 'white',
   speed = '6s',
   thickness = 1,
@@ -44,7 +46,7 @@ const StarBorder = <T extends React.ElementType = 'button'>({
           animationDuration: speed
         }}
       ></div>
-      <div className="relative z-1 bg-accent text-[#0a0a0a] text-center font-semibold text-[0.95rem] py-3.5 px-8 rounded-sm">
+      <div className={`relative z-1 text-center font-semibold text-[0.95rem] py-3.5 px-8 flex items-center justify-center gap-2 rounded-sm ${innerClassName || 'bg-accent text-[#0a0a0a]'}`}>
         {children}
       </div>
     </Component>

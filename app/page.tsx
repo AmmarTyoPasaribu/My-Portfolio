@@ -1,4 +1,6 @@
 import { ParticleCanvas } from '@/components/ParticleCanvas';
+import SplashCursor from '@/components/SplashCursor';
+import { WalkingRobotBar } from '@/components/RobotBerjalan';
 import { Navbar } from '@/components/Navbar';
 import { Hero } from '@/components/Hero';
 import { About } from '@/components/About';
@@ -17,6 +19,14 @@ export default function Home() {
   return (
     <>
       <ParticleCanvas />
+      <SplashCursor 
+        COLOR="#ff4620" 
+        RAINBOW_MODE={false} 
+        SPLAT_RADIUS={0.05} 
+        DENSITY_DISSIPATION={6.0} 
+        VELOCITY_DISSIPATION={4.0} 
+      />
+      <WalkingRobotBar />
       <Navbar />
       <Hero />
       <About />

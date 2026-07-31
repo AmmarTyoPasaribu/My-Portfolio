@@ -11,7 +11,7 @@ export const en = {
   // ── ABOUT ──
   'about.title': 'About <span>Me</span>',
   'about.p1':
-    'A Bachelor of Information Systems from Universitas Hasanuddin with a strong foundation in full-stack web development and a growing passion for AI and Data Science. Proficient in Python (Flask), JavaScript, Node.js, Express.js, React.js/Next.js, Laravel, and SQL — always eager to learn, build, and turn complex ideas into clean, working solutions.',
+    'Fresh Graduate of Information Systems from Hasanuddin University (GPA 3.93/4.00) with a focus on Full Stack Web Development integrated with Artificial Intelligence (Machine Learning, Deep Learning), and data processing (Data Analysis, Data Science). Experienced in building end-to-end web applications using React/Next.js, Node.js/Express, Laravel, and Python. Active in student organizations and committees, open to various career opportunities in the information technology field with a spirit of team collaboration and continuous learning.',
   'about.skill': 'Skill & Interest',
   'about.cv': 'Download CV',
 

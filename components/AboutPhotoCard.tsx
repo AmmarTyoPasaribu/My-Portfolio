@@ -28,8 +28,8 @@ export function AboutPhotoCard() {
           sizes="300px"
           className="object-cover object-top transition-transform duration-500 group-hover:scale-[1.04]"
         />
-        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-2/5 bg-gradient-to-t from-black/85 via-black/35 to-transparent" />
-        <div className="absolute inset-x-0 bottom-0 p-5">
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 z-10 h-2/5 bg-gradient-to-t from-black/85 via-black/35 to-transparent" />
+        <div className="absolute inset-x-0 bottom-0 z-20 p-5">
           <div className="mb-1.5 flex items-center gap-1.5">
             <span className="relative flex h-1.5 w-1.5">
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />

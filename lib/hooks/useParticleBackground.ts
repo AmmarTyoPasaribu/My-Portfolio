@@ -63,7 +63,7 @@ export function useParticleBackground() {
     }
 
     resize();
-    particles = Array.from({ length: 28 }, makeParticle);
+    particles = Array.from({ length: 80 }, makeParticle);
     window.addEventListener('resize', resize);
     tick();
 

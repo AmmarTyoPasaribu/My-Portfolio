@@ -33,6 +33,7 @@ export function useTiltCard<T extends HTMLElement>() {
         const r = el!.getBoundingClientRect();
         const px = (e.clientX - r.left) / r.width - 0.5;
         const py = (e.clientY - r.top) / r.height - 0.5;
+        
         rotateYTo(px * 6);
         rotateXTo(py * -6);
         yTo(-6);

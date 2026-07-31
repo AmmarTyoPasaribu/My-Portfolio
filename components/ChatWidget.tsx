@@ -133,7 +133,7 @@ export function ChatWidget() {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.92, y: 12 }}
             transition={{ type: 'spring', stiffness: 380, damping: 30 }}
-            className="fixed bottom-24 left-5 z-[999] flex h-[480px] w-[min(360px,calc(100vw-2.5rem))] flex-col overflow-hidden rounded-xl border border-border bg-bg-card shadow-[0_20px_60px_rgba(0,0,0,0.5)] backdrop-blur-xl max-md:bottom-20"
+            className="fixed bottom-24 left-5 z-[999] flex h-[480px] w-[min(360px,calc(100vw-2.5rem))] max-h-[calc(100dvh-180px)] flex-col overflow-hidden rounded-xl border border-border bg-bg-card shadow-[0_20px_60px_rgba(0,0,0,0.5)] backdrop-blur-xl max-md:bottom-20"
           >
             <div className="flex items-center gap-3 border-b border-border px-4 py-3">
               <div className="relative flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full bg-accent/15 text-accent">

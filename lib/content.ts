@@ -25,7 +25,7 @@ export const heroSocials: { icon: SocialIcon; href: string; label: string }[] = 
   { icon: 'github', href: 'https://github.com/AmmarTyoPasaribu', label: 'GitHub' },
   { icon: 'linkedin', href: 'https://linkedin.com/in/ammartyopasaribu', label: 'LinkedIn' },
   { icon: 'email', href: 'mailto:ammar123tyo12@gmail.com', label: 'Email' },
-  { icon: 'phone', href: 'tel:+62895620163633', label: 'Phone' },
+  { icon: 'phone', href: 'tel:+62823964064360', label: 'Phone' },
 ];
 
 export const footerSocials: { icon: SocialIcon; href: string; label: string }[] = [
@@ -37,7 +37,9 @@ export const footerSocials: { icon: SocialIcon; href: string; label: string }[] 
 // ── ABOUT ── (tag pills are plain English, not translated in the original site)
 export const aboutTags = [
   'Web Development',
+  'Mobile Development',
   'Data Science',
+  'Data Analyst',
   'Machine Learning',
   'Deep Learning',
   'Data Visualization',
@@ -234,5 +236,5 @@ export const contactLinks: ContactLink[] = [
   { icon: 'github', href: 'https://github.com/AmmarTyoPasaribu', title: 'GitHub', value: 'AmmarTyoPasaribu' },
   { icon: 'linkedin', href: 'https://www.linkedin.com/in/ammartyopasaribu', title: 'LinkedIn', value: 'ammartyopasaribu' },
   { icon: 'instagram', href: 'https://instagram.com/ammartyo', title: 'Instagram', value: '@ammartyo' },
-  { icon: 'phone', href: 'tel:+6289562016363', title: 'Phone', value: '+62 895-6201-63633' },
+  { icon: 'phone', href: 'tel:+62823964064360', title: 'Phone', value: '+62 823-9640-64360' },
 ];
