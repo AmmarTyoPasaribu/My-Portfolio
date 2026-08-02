@@ -1,4 +1,5 @@
 'use client';
+// @ts-nocheck
 /* eslint-disable @typescript-eslint/no-explicit-any -- vendored ReactBits component */
 import { useEffect, useRef } from 'react';
 
