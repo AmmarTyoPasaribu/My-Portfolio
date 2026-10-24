@@ -18,12 +18,14 @@ export const en = {
   'hero.status': 'STATUS: READY TO BUILD',
   'hero.cta': 'VIEW PROJECTS',
   'hero.portrait': 'Portrait of Ammar Tyo Pasaribu',
+  'hero.chip1': 'Full Stack Developer',
+  'hero.chip2': 'Artificial Intelligence',
+  'hero.chip3': 'Machine Learning',
+  'hero.chip4': 'Data Science',
+  'hero.chip5': 'Data Analyst',
+  'hero.chip6': 'Software Engineering',
   'hero.tag1': 'FULL STACK DEV',
   'hero.tag2': 'AI & DATA',
-  'hero.chip1': 'Full Stack Developer',
-  'hero.chip2': 'Information Systems Graduate',
-  'hero.chip3': 'AI & Data Enthusiast',
-  'hero.chip4': 'Web Developer',
 
   // ── POSTER INTRO ──
   'poster.hello': "Hello, I'm",

@@ -3,7 +3,7 @@
 import { ArrowDown } from 'lucide-react';
 import { useEffect, useRef } from 'react';
 import { useT } from '@/lib/i18n/LanguageProvider';
-import { personal } from '@/lib/site/data';
+import { certifications, personal, projects } from '@/lib/site/data';
 import BtnStuds from './BtnStuds';
 
 /**
@@ -65,8 +65,8 @@ export default function PosterHero() {
         </div>
         <ul className="bx-poster-stats">
           <li><b>3.93</b><span>{t('poster.s1')}</span></li>
-          <li><b>12</b><span>{t('poster.s2')}</span></li>
-          <li><b>22</b><span>{t('poster.s3')}</span></li>
+          <li><b>{projects.length}</b><span>{t('poster.s2')}</span></li>
+          <li><b>{certifications.length}</b><span>{t('poster.s3')}</span></li>
         </ul>
       </div>
 

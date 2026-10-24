@@ -20,12 +20,14 @@ export const id: Record<keyof typeof en, string> = {
   'hero.status': 'STATUS: SIAP MEMBANGUN',
   'hero.cta': 'LIHAT PROYEK',
   'hero.portrait': 'Potret Ammar Tyo Pasaribu',
+  'hero.chip1': 'Full Stack Developer',
+  'hero.chip2': 'Artificial Intelligence',
+  'hero.chip3': 'Machine Learning',
+  'hero.chip4': 'Data Science',
+  'hero.chip5': 'Data Analyst',
+  'hero.chip6': 'Software Engineering',
   'hero.tag1': 'FULL STACK DEV',
   'hero.tag2': 'AI & DATA',
-  'hero.chip1': 'Full Stack Developer',
-  'hero.chip2': 'Lulusan Sistem Informasi',
-  'hero.chip3': 'Peminat AI & Data',
-  'hero.chip4': 'Web Developer',
 
   // ── POSTER INTRO ──
   'poster.hello': 'Halo, saya',

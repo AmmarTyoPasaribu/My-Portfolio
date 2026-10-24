@@ -72,7 +72,7 @@ export interface Certification {
 export const personal = {
   name: 'Ammar Tyo Pasaribu',
   shortName: 'Ammar',
-  roles: ['Full Stack Developer', 'AI & Data Enthusiast', 'Web Developer', 'Problem Solver'],
+  roles: ['Full Stack Developer', 'Artificial Intelligence', 'Machine Learning', 'Data Science', 'Data Analyst', 'Software Engineering'],
   description: L(
     'Full Stack Developer who combines web technology with AI and data to build intelligent, real-world solutions.',
     'Full Stack Developer yang memadukan teknologi web dengan AI dan data untuk membangun solusi cerdas di dunia nyata.',
@@ -185,6 +185,10 @@ export const experiences: Experience[] = [
       { src: '/media/experience/bps-maros/team.jpg', caption: 'Team photo at BPS Maros' },
       { src: '/media/experience/bps-maros/staff-session.jpg', caption: 'Staff discussion session' },
       { src: '/media/experience/bps-maros/building-team.jpg', caption: 'In front of the BPS Maros office with fellow interns' },
+      { src: '/media/experience/bps-maros/web-monitoring-pegawai.jpg', caption: 'Employee daily target monitoring system (login page)' },
+      { src: '/media/experience/bps-maros/web-pantau-semaros.jpg', caption: 'Pantau SEMAROS: Economic Census 2026 monitoring portal' },
+      { src: '/media/experience/bps-maros/web-desa-taroada.jpg', caption: 'Taroada Village website (Desa Cantik)' },
+      { src: '/media/experience/bps-maros/web-antrean-buku-tamu.jpg', caption: 'SILABU: service queue and digital guest book' },
     ],
   },
   {
@@ -300,7 +304,7 @@ export const education: Education[] = [
     degree: L('Bachelor of Information Systems', 'Sarjana Sistem Informasi'),
     institution: 'Universitas Hasanuddin',
     location: 'Makassar, Indonesia',
-    period: L('2022 — Jul 2026', '2022 — Jul 2026'),
+    period: L('2022 — 2026', '2022 — 2026'),
     description: L(
       'Graduated on time in 3 years 10 months with a GPA of 3.93 / 4.00. Bakti BCA scholarship recipient, information systems laboratory assistant, and focused on full stack development integrated with AI.',
       'Lulus tepat waktu 3 tahun 10 bulan dengan IPK 3,93 / 4,00. Penerima Beasiswa Bakti BCA, asisten laboratorium sistem informasi, dan berfokus pada full stack dev terintegrasi dengan AI.',

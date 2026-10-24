@@ -7,6 +7,9 @@ type ChatMessage = { role: 'user' | 'assistant'; content: string };
 const MAX_MESSAGE_LENGTH = 2000;
 const MAX_HISTORY_MESSAGES = 20;
 const OPENROUTER_URL = 'https://openrouter.ai/api/v1/chat/completions';
+// Free models come and go on OpenRouter. The configured model is tried first; if it is unavailable,
+// OpenRouter falls through this list in order instead of the chat failing outright.
+const FALLBACK_MODELS = ['nvidia/nemotron-3.5-super-vl:free', 'nvidia/nemotron-3.5-lightning:free', 'google/gemma-4-31b-it:free'];
 
 function isValidMessages(value: unknown): value is ChatMessage[] {
   return (
@@ -63,7 +66,7 @@ export async function POST(request: Request) {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        model: process.env.OPENROUTER_MODEL ?? 'openai/gpt-oss-20b:free',
+        models: [...new Set([process.env.OPENROUTER_MODEL, ...FALLBACK_MODELS].filter(Boolean))].slice(0, 3),
         messages: [
           { role: 'system', content: CHAT_SYSTEM_PROMPT },
           ...conversation.map((m) => ({ role: m.role, content: m.content })),

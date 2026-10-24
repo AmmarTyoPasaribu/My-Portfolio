@@ -40,7 +40,7 @@ export function Hero() {
           <div className="bx-box bx-intro">
             <p>{me.description}</p>
             <div className="bx-chips">
-              {(['hero.chip1', 'hero.chip2', 'hero.chip3', 'hero.chip4'] as const).map((k) => (
+              {(['hero.chip1', 'hero.chip2', 'hero.chip3', 'hero.chip4', 'hero.chip5', 'hero.chip6'] as const).map((k) => (
                 <span key={k} className="bx-chip">{t(k)}</span>
               ))}
             </div>

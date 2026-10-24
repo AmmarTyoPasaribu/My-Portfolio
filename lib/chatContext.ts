@@ -23,7 +23,8 @@ function buildPortfolioContext(): string {
   lines.push(`# ${personal.name} — Portfolio Knowledge Base`);
   lines.push('');
   lines.push('## Basics');
-  lines.push(`Roles: ${personal.roles.join(', ')}`);
+  lines.push(`Focus areas: ${personal.roles.join(', ')}`);
+  lines.push(`Email: ${personal.email}`);
   lines.push(`Location: ${personal.location}`);
   lines.push(en(personal.description));
   lines.push('');
@@ -70,8 +71,10 @@ function buildPortfolioContext(): string {
     const demo =
       p.demoStatus === 'live' && p.links.demo ? `Live demo: ${p.links.demo}` : 'Live demo: currently under maintenance/unavailable';
     const role = p.role ? ` Role: ${p.role}.` : '';
+    const year = p.year ? `, ${p.year}` : '';
+    const features = p.features.length ? ` Key features: ${p.features.join('; ')}.` : '';
     lines.push(
-      `- ${p.title} (${p.category}): ${p.description}${role} Tech: ${p.technologies.join(', ')}. ${demo}. Source code: ${p.links.github ?? 'n/a'}`,
+      `- ${p.title} (${p.category}${year}): ${p.description} ${p.overview}${role}${features} Tech: ${p.technologies.join(', ')}. ${demo}. Source code: ${p.links.github ?? 'n/a'}`,
     );
   }
   lines.push('');

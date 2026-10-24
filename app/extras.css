@@ -365,3 +365,6 @@ html::-webkit-scrollbar, body::-webkit-scrollbar { width: 0; height: 0; display:
 .bx-btn--shine:hover svg { transform: translateX(3px) scale(1.15); }
 .bx-btn--shine::after { content: ''; position: absolute; top: 0; left: -60%; width: 40%; height: 100%; background: rgba(255, 255, 255, 0.35); transform: skewX(-20deg); transition: left 0.45s ease; pointer-events: none; }
 .bx-btn--shine:hover::after { left: 130%; }
+
+/* "Pendidikan / Education" label: a short box that hugs its text, not a full-width bar */
+.bx-stack > .bx-heading--plain { justify-self: start; width: fit-content; }
