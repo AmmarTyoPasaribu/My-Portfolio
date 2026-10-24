@@ -1,12 +1,11 @@
 'use client';
 
 import { useEffect, useRef, useState, type ReactNode } from 'react';
-import { AnimatePresence, motion } from 'motion/react';
 import { IconClose, IconRobot, IconSend } from '@/lib/icons';
+import { useT } from '@/lib/i18n/LanguageProvider';
 
-// Minimal markdown renderer for assistant replies — just enough for the
-// patterns LLMs actually produce (bold, bullet/numbered lists, links, line
-// breaks). A full markdown library is overkill for chat bubble text.
+// Minimal markdown renderer for assistant replies: just enough for the patterns LLMs actually
+// produce (bold, bullet/numbered lists, links, line breaks). A full markdown library is overkill here.
 function renderInline(text: string, keyPrefix: string): ReactNode[] {
   const nodes: ReactNode[] = [];
   const regex = /\*\*(.+?)\*\*|\[([^\]]+)\]\(([^)]+)\)/g;
@@ -19,13 +18,7 @@ function renderInline(text: string, keyPrefix: string): ReactNode[] {
       nodes.push(<strong key={`${keyPrefix}-${i++}`}>{match[1]}</strong>);
     } else {
       nodes.push(
-        <a
-          key={`${keyPrefix}-${i++}`}
-          href={match[3]}
-          target="_blank"
-          rel="noreferrer"
-          className="underline decoration-accent/50 underline-offset-2 hover:text-accent"
-        >
+        <a key={`${keyPrefix}-${i++}`} href={match[3]} target="_blank" rel="noreferrer" className="bx-chat-link">
           {match[2]}
         </a>,
       );
@@ -39,13 +32,13 @@ function renderInline(text: string, keyPrefix: string): ReactNode[] {
 function renderMarkdownLite(content: string): ReactNode {
   const lines = content.split('\n').map((l) => l.trim()).filter(Boolean);
   return (
-    <div className="space-y-1.5">
+    <div className="bx-chat-md">
       {lines.map((line, i) => {
         const bulletMatch = /^[-*]\s+(.*)/.exec(line) ?? /^\d+\.\s+(.*)/.exec(line);
         if (bulletMatch) {
           return (
-            <div key={i} className="flex gap-1.5 pl-0.5">
-              <span className="text-accent">•</span>
+            <div key={i} className="bx-chat-li">
+              <span aria-hidden="true">▪</span>
               <span>{renderInline(bulletMatch[1], `l${i}`)}</span>
             </div>
           );
@@ -58,31 +51,22 @@ function renderMarkdownLite(content: string): ReactNode {
 
 type ChatMessage = { id: number; role: 'user' | 'assistant'; content: string };
 
-const WELCOME_MESSAGE: ChatMessage = {
-  id: 0,
-  role: 'assistant',
-  content:
-    "Hi! I'm Ammar's portfolio assistant. Ask me about his projects, skills, experience, or how to get in touch.",
-};
-
-function TypingDots() {
+function Studs({ count }: { count: number }) {
   return (
-    <div className="flex items-center gap-1 px-1 py-1">
-      {[0, 1, 2].map((i) => (
-        <motion.span
-          key={i}
-          className="h-1.5 w-1.5 rounded-full bg-text-secondary"
-          animate={{ y: [0, -4, 0], opacity: [0.4, 1, 0.4] }}
-          transition={{ duration: 0.9, repeat: Infinity, delay: i * 0.15, ease: 'easeInOut' }}
-        />
+    <span className="bx-chat-studs" aria-hidden="true">
+      {Array.from({ length: count }, (_, i) => (
+        <i key={i} />
       ))}
-    </div>
+    </span>
   );
 }
 
+/** LEGO-styled AI assistant: a red brick button that opens a yellow-topped chat panel. */
 export function ChatWidget() {
+  const { t } = useT();
   const [isOpen, setIsOpen] = useState(false);
-  const [messages, setMessages] = useState<ChatMessage[]>([WELCOME_MESSAGE]);
+  // the greeting is rendered from the dictionary (so it follows the language switch) and is never sent to the API
+  const [messages, setMessages] = useState<ChatMessage[]>([]);
   const [input, setInput] = useState('');
   const [isSending, setIsSending] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -91,7 +75,7 @@ export function ChatWidget() {
 
   useEffect(() => {
     scrollRef.current?.scrollTo({ top: scrollRef.current.scrollHeight, behavior: 'smooth' });
-  }, [messages, isSending]);
+  }, [messages, isSending, isOpen]);
 
   async function sendMessage() {
     const content = input.trim();
@@ -111,14 +95,10 @@ export function ChatWidget() {
         body: JSON.stringify({ messages: nextMessages.map(({ role, content }) => ({ role, content })) }),
       });
       const data = await res.json();
-
-      if (!res.ok) {
-        throw new Error(data?.error ?? 'Something went wrong.');
-      }
-
+      if (!res.ok) throw new Error(data?.error ?? t('chat.error'));
       setMessages((prev) => [...prev, { id: nextId.current++, role: 'assistant', content: data.reply as string }]);
     } catch (err) {
-      setError(err instanceof Error ? err.message : 'Something went wrong.');
+      setError(err instanceof Error ? err.message : t('chat.error'));
     } finally {
       setIsSending(false);
     }
@@ -126,150 +106,79 @@ export function ChatWidget() {
 
   return (
     <>
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9, y: 16 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            exit={{ opacity: 0, scale: 0.92, y: 12 }}
-            transition={{ type: 'spring', stiffness: 380, damping: 30 }}
-            className="fixed bottom-24 left-5 z-[999] flex h-[480px] w-[min(360px,calc(100vw-2.5rem))] max-h-[calc(100dvh-180px)] flex-col overflow-hidden rounded-xl border border-border bg-bg-card shadow-[0_20px_60px_rgba(0,0,0,0.5)] backdrop-blur-xl max-md:bottom-20"
+      {isOpen && (
+        <section className="bx-chat" role="dialog" aria-label={t('chat.title')}>
+          <Studs count={6} />
+          <header className="bx-chat-head">
+            <span className="bx-chat-avatar" aria-hidden="true"><IconRobot className="bx-chat-ico" /></span>
+            <div className="bx-chat-headtext">
+              <strong>{t('chat.title')}</strong>
+              <span><i aria-hidden="true" /> {t('chat.online')}</span>
+            </div>
+            <button type="button" className="bx-chat-x" aria-label={t('chat.close')} onClick={() => setIsOpen(false)}>
+              <IconClose className="bx-chat-ico" />
+            </button>
+          </header>
+
+          <div ref={scrollRef} className="bx-chat-body">
+            <div className="bx-chat-row">
+              <span className="bx-chat-mini" aria-hidden="true"><IconRobot className="bx-chat-ico" /></span>
+              <div className="bx-chat-bubble bx-chat-bubble--bot">
+                <p>{t('chat.welcome')}</p>
+              </div>
+            </div>
+            {messages.map((m) => (
+              <div key={m.id} className={`bx-chat-row ${m.role === 'user' ? 'bx-chat-row--me' : ''}`}>
+                {m.role === 'assistant' && <span className="bx-chat-mini" aria-hidden="true"><IconRobot className="bx-chat-ico" /></span>}
+                <div className={`bx-chat-bubble ${m.role === 'user' ? 'bx-chat-bubble--me' : 'bx-chat-bubble--bot'}`}>
+                  {m.role === 'assistant' ? renderMarkdownLite(m.content) : <p>{m.content}</p>}
+                </div>
+              </div>
+            ))}
+            {isSending && (
+              <div className="bx-chat-row">
+                <span className="bx-chat-mini" aria-hidden="true"><IconRobot className="bx-chat-ico" /></span>
+                <div className="bx-chat-bubble bx-chat-bubble--bot bx-chat-typing" aria-label="...">
+                  <i /><i /><i />
+                </div>
+              </div>
+            )}
+            {error && <div className="bx-chat-error" role="alert">{error}</div>}
+          </div>
+
+          <form
+            className="bx-chat-form"
+            onSubmit={(e) => {
+              e.preventDefault();
+              void sendMessage();
+            }}
           >
-            <div className="flex items-center gap-3 border-b border-border px-4 py-3">
-              <div className="relative flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full bg-accent/15 text-accent">
-                <IconRobot className="h-5 w-5" />
-              </div>
-              <div className="min-w-0 flex-1">
-                <p className="font-mono text-xs font-semibold uppercase tracking-wider text-text-primary">Portfolio Assistant</p>
-                <p className="flex items-center gap-1.5 text-xs text-text-secondary">
-                  <span className="relative flex h-1.5 w-1.5">
-                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
-                    <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-emerald-400" />
-                  </span>
-                  Online
-                </p>
-              </div>
-              <button
-                type="button"
-                aria-label="Close chat"
-                onClick={() => setIsOpen(false)}
-                className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full text-text-secondary transition-colors hover:bg-bg-card-hover hover:text-text-primary"
-              >
-                <IconClose className="h-4 w-4" />
-              </button>
-            </div>
+            <input
+              type="text"
+              value={input}
+              onChange={(e) => setInput(e.target.value)}
+              placeholder={t('chat.placeholder')}
+              maxLength={2000}
+              aria-label={t('chat.placeholder')}
+            />
+            <button type="submit" disabled={isSending || !input.trim()} aria-label={t('chat.send')}>
+              <IconSend className="bx-chat-ico" />
+            </button>
+          </form>
+        </section>
+      )}
 
-            <div ref={scrollRef} className="flex-1 space-y-3 overflow-y-auto px-4 py-3">
-              <AnimatePresence initial={false}>
-                {messages.map((m) => (
-                  <motion.div
-                    key={m.id}
-                    initial={{ opacity: 0, y: 10, scale: 0.97 }}
-                    animate={{ opacity: 1, y: 0, scale: 1 }}
-                    transition={{ duration: 0.25, ease: 'easeOut' }}
-                    className={`flex items-end gap-2 ${m.role === 'user' ? 'justify-end' : 'justify-start'}`}
-                  >
-                    {m.role === 'assistant' && (
-                      <div className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-accent/15 text-accent">
-                        <IconRobot className="h-3.5 w-3.5" />
-                      </div>
-                    )}
-                    <div
-                      className={`max-w-[80%] rounded-lg px-3 py-2 text-sm leading-relaxed ${
-                        m.role === 'user'
-                          ? 'rounded-br-sm bg-accent text-[#0a0a0a]'
-                          : 'rounded-bl-sm bg-bg-card-hover text-text-primary'
-                      }`}
-                    >
-                      {m.role === 'assistant' ? renderMarkdownLite(m.content) : m.content}
-                    </div>
-                  </motion.div>
-                ))}
-                {isSending && (
-                  <motion.div
-                    key="typing"
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0 }}
-                    className="flex items-end gap-2"
-                  >
-                    <div className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-accent/15 text-accent">
-                      <IconRobot className="h-3.5 w-3.5" />
-                    </div>
-                    <div className="rounded-lg rounded-bl-sm bg-bg-card-hover px-2 py-1">
-                      <TypingDots />
-                    </div>
-                  </motion.div>
-                )}
-                {error && (
-                  <motion.div
-                    key="error"
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    className="rounded-lg border border-border-glow bg-bg-card-hover px-3 py-2 text-sm text-accent"
-                  >
-                    {error}
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </div>
-
-            <form
-              onSubmit={(e) => {
-                e.preventDefault();
-                void sendMessage();
-              }}
-              className="flex items-center gap-2 border-t border-border p-3"
-            >
-              <input
-                type="text"
-                value={input}
-                onChange={(e) => setInput(e.target.value)}
-                placeholder="Ask about Ammar..."
-                maxLength={2000}
-                className="min-w-0 flex-1 rounded-lg border border-border bg-bg px-3 py-2 text-sm text-text-primary outline-none placeholder:text-text-muted focus:border-accent"
-              />
-              <motion.button
-                type="submit"
-                disabled={isSending || !input.trim()}
-                aria-label="Send message"
-                whileTap={{ scale: 0.9 }}
-                className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-lg bg-accent text-[#0a0a0a] transition-opacity disabled:opacity-40"
-              >
-                <IconSend className="h-4 w-4" />
-              </motion.button>
-            </form>
-          </motion.div>
-        )}
-      </AnimatePresence>
-
-      <motion.button
+      <button
         type="button"
-        aria-label={isOpen ? 'Close chat assistant' : 'Open chat assistant'}
+        className={`bx-chat-fab ${isOpen ? 'is-open' : ''}`}
+        aria-label={isOpen ? t('chat.close') : t('chat.open')}
+        aria-expanded={isOpen}
         onClick={() => setIsOpen((v) => !v)}
-        whileHover={{ scale: 1.08 }}
-        whileTap={{ scale: 0.92 }}
-        className="fixed bottom-8 left-8 z-[999] flex h-14 w-14 items-center justify-center rounded-full bg-accent text-[#0a0a0a] shadow-[0_8px_24px_rgba(255,70,32,0.35)] max-md:bottom-5 max-md:left-5 max-md:h-12 max-md:w-12"
       >
-        <AnimatePresence mode="wait" initial={false}>
-          <motion.span
-            key={isOpen ? 'close' : 'robot'}
-            initial={{ opacity: 0, rotate: -90, scale: 0.6 }}
-            animate={{ opacity: 1, rotate: 0, scale: 1 }}
-            exit={{ opacity: 0, rotate: 90, scale: 0.6 }}
-            transition={{ duration: 0.2 }}
-            className="flex items-center justify-center"
-          >
-            {isOpen ? <IconClose className="h-5 w-5" /> : <IconRobot className="h-6 w-6" />}
-          </motion.span>
-        </AnimatePresence>
-        {!isOpen && (
-          <span className="absolute right-0 top-0 flex h-3.5 w-3.5">
-            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
-            <span className="relative inline-flex h-3.5 w-3.5 rounded-full border-2 border-bg bg-emerald-400" />
-          </span>
-        )}
-      </motion.button>
+        <Studs count={2} />
+        {isOpen ? <IconClose className="bx-chat-ico" /> : <IconRobot className="bx-chat-ico" />}
+        {!isOpen && <span className="bx-chat-dot" aria-hidden="true" />}
+      </button>
     </>
   );
 }

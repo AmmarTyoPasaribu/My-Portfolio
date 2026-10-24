@@ -1,0 +1,2 @@
+# keep personal files out of CLI deploys too (git deploys already skip them via .gitignore)
+public/media/_private

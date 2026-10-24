@@ -5,11 +5,11 @@ let listeners: Array<() => void> = [];
 
 export function getLang(): Lang {
   const stored = window.localStorage.getItem(STORAGE_KEY);
-  return stored === 'id' ? 'id' : 'en';
+  return stored === 'en' ? 'en' : 'id';
 }
 
 export function getServerLang(): Lang {
-  return 'en';
+  return 'id';
 }
 
 export function setLang(lang: Lang) {

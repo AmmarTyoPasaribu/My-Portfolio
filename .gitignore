@@ -41,9 +41,12 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# stray local files not part of the site (never delete these automatically —
-# they're just kept out of version control)
-/foto.JPG
-/ini.JPG
-/ini/
-/assets/
+
+# reference template (not part of this site)
+/porto orang/
+/porto orang gacor/
+
+
+
+# everything personal (about-me notes, CV, LinkedIn drafts, originals, private font, archive): local only, never committed or deployed
+/public/media/_private/

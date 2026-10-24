@@ -1,45 +1,29 @@
-import { ParticleCanvas } from '@/components/ParticleCanvas';
-import SplashCursor from '@/components/SplashCursor';
-import { WalkingRobotBar } from '@/components/RobotBerjalan';
-import { Navbar } from '@/components/Navbar';
-import { Hero } from '@/components/Hero';
-import { About } from '@/components/About';
-import { EducationSection } from '@/components/EducationSection';
-import { ExperienceSection } from '@/components/ExperienceSection';
-import { AchievementsGrid } from '@/components/AchievementsGrid';
-import { ProjectsGrid } from '@/components/ProjectsGrid';
-import { Certifications } from '@/components/Certifications';
-import { SkillsMarquee } from '@/components/SkillsMarquee';
-import { ContactCards } from '@/components/ContactCards';
-import { Footer } from '@/components/Footer';
-import { BackToTop } from '@/components/BackToTop';
-import { ChatWidget } from '@/components/ChatWidget';
+import PosterHero from "@/components/brutal/PosterHero";
+import { Hero, Marquee } from "@/components/brutal/Intro";
+import AboutSection from "@/components/brutal/AboutSection";
+import { CertificationsSection, ExperienceSection, OrganizationsSection, VolunteerSection } from "@/components/brutal/ListSections";
+import ProjectsSection from "@/components/brutal/ProjectsSection";
+import SkillsSection from "@/components/brutal/SkillsSection";
+import ContactSection from "@/components/brutal/ContactSection";
+import BrickLoader from "@/components/brutal/BrickLoader";
+import RevealObserver from "@/components/brutal/RevealObserver";
 
 export default function Home() {
   return (
-    <>
-      <ParticleCanvas />
-      <SplashCursor 
-        COLOR="#ff4620" 
-        RAINBOW_MODE={false} 
-        SPLAT_RADIUS={0.05} 
-        DENSITY_DISSIPATION={6.0} 
-        VELOCITY_DISSIPATION={4.0} 
-      />
-      <WalkingRobotBar />
-      <Navbar />
+    <main id="main-content">
+      <BrickLoader />
+      <PosterHero />
       <Hero />
-      <About />
-      <EducationSection />
+      <Marquee />
+      <AboutSection />
       <ExperienceSection />
-      <AchievementsGrid />
-      <ProjectsGrid />
-      <Certifications />
-      <SkillsMarquee />
-      <ContactCards />
-      <Footer />
-      <BackToTop />
-      <ChatWidget />
-    </>
+      <ProjectsSection />
+      <OrganizationsSection />
+      <VolunteerSection />
+      <CertificationsSection />
+      <SkillsSection />
+      <ContactSection />
+      <RevealObserver />
+    </main>
   );
 }
